@@ -1,0 +1,357 @@
+html, body {
+    font-family: "museo-sans-rounded", sans-serif;
+    margin: 0;
+}
+
+iframe {
+    height: auto;
+    border: none;
+}
+
+p {
+    margin: 0;
+    color
+}
+
+a {
+    color: #000;
+    font-weight: bold;
+}
+
+.post-form {
+    margin: 1em;
+}
+
+.post-update {
+    width: 60%;
+    float: left;
+}
+
+.post-button {
+    margin: 0 1em;
+}
+
+a:hover {
+    color: #59cae0;
+}
+
+.button {
+    background-color: #59cae0;
+    color: #fff;
+}
+
+.button a:hover {
+    background-color: #59cae0;
+}
+
+bold {
+    font-weight: bold;
+    text-transform: ;
+}
+
+
+/* BUTTON */
+
+.button-border {
+    color: #000;
+    border-radius: 50px;
+}
+
+.addfriend-sendmsg {
+    color: #000;
+    border-radius: 50px;
+    text-align: center;
+    margin: 0.5em auto;
+    display: block;
+}
+
+.follow-section {
+    text-align: center;
+    margin: 2em 0;
+    font-family: "museo-sans-rounded", sans-serif;
+}
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    color: #fff;
+    font-weight: bold;
+    background: #59cae0;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #59cae0 0%, #66e8ff 100%, #2989d8 100%, #25B9D7 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #59cae0 0%, #66e8ff 100%, #2989d8 100%, #25B9D7 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #59cae0 0%, #66e8ff 100%, #2989d8 100%, #207cca 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.search {
+    border: none;
+    box-shadow: none;
+    width: 40%;
+    border-radius: 30px;
+    float: right;
+    margin: 1.3em 0 0 0;
+}
+
+
+/* FRONTPAGE */
+
+.title {
+    padding: 2em 0;
+    font-family: "museo-sans-rounded", sans-serif;
+    ;
+    font-weight: bold;
+}
+
+.signup-section {
+    padding: 1em 0;
+    background: #EAEAEA;
+    max-width: none;
+}
+
+.signup-section h2 {
+    font-family: "museo-sans-rounded", sans-serif;
+    color: #59CAE0;
+    padding: 0.5em 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.signup-inputs {
+    border: none;
+    box-shadow: none;
+}
+
+.logo {
+    width: 9em;
+    padding: 1em;
+}
+
+.logo-loggedin {
+    width: 7em;
+    padding: 1em;
+}
+
+.login-form {
+    margin: 2em 0 0 0;
+}
+
+.signup-login {
+    float: right;
+}
+
+.login-username {
+    border-radius: 5em;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 0;
+}
+
+.login-password {
+    border-radius: 5em;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 0;
+}
+
+.login-password:hover, .login-username:hover, {
+    border: none;
+}
+
+.login {
+    background-color: #fff;
+    color: #000;
+    font-family: "museo-sans-rounded", sans-serif;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+.login:hover {
+    background: #fff;
+    color: #000;
+}
+
+.forgot-password a {
+    font-weight: 400;
+    font-size: 0.7em;
+    padding: 0.8em 0 0 0.7em;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 2em 0 0.5em 0;
+    font-weight: bold;
+    font-family: "museo-sans-rounded", sans-serif;
+}
+
+.features-section {
+    margin: 1em auto;
+}
+
+.single-post {
+    background-color: #F5F5F5;
+    border-bottom: 3px solid #59CAE0;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.single-post-prof-image {
+    float: left;
+    border-radius: 40px;
+    width: 60px;
+}
+
+.single-post-user {
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: 0 0 0 1em;
+    margin: 0.5em 0 0 0;
+    float: left;
+    display: block;
+}
+
+.single-post-body {
+    float: none;
+    padding: 1em 0;
+    width: 100%;
+    font-size: 1.5em;
+    display: inline-block;
+}
+
+.comment-input {
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 1em;
+    background: #eaeaea;
+}
+
+.bottom-header {
+    background-color: #EAEAEA;
+    width: 100%;
+    padding: 1em;
+    max-width: none;
+    margin-bottom: ;
+    color: #000;
+}
+
+.bottom-header-links {
+    float: right;
+}
+
+.slogan {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.join {
+    color: #000;
+    border-radius: 5em;
+    background-color: #fff;
+    text-transform: uppercase;
+    font-family: "museo-sans-rounded", sans-serif;
+    font-weight: bold;
+    padding: 1em 1.5em;
+    margin: 0 0 5em 0;
+}
+
+.join:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.header-links {
+    padding: 0.7em;
+}
+
+.comment-body {
+    font-family: "museo-sans-rounded", sans-serif;
+}
+
+
+/* PROFILE PAGE */
+
+.profileposts {}
+
+.profile-icon {
+    width: 60px;
+    border-radius: 50px;
+    float: left;
+}
+
+.posted_by {
+    font-family: "museo-sans-rounded", sans-serif;
+    font-weight: ;
+    margin: 1em 0 0 1em;
+    float: left;
+}
+
+.profile-body {
+    width: 100%;
+    display: block;
+    float: none;
+}
+
+.profile-image {
+    width: 40%;
+    height: 40%;
+    border: 5px solid #59CAE0;
+    margin: 1em auto;
+    display: block;
+    text-align: center;
+    border-radius: 1000px;
+}
+
+.profile-username {
+    font-family: "museo-sans-rounded", sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.profile-bio {
+    text-align: center;
+    background: #eaeaea;
+    padding: 1.5em;
+    margin: 2em 2em;
+}
+
+.single-friends {
+    margin: 0.5em auto;
+    width: 3em;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.single-friends img {
+    border-radius: 50px;
+}
+
+.friends-title {
+    font-family: "museo-sans-rounded", sans-serif;
+    font-weight: bold;
+}
+
+
+/* FRIENDS  REQUEST */
+
+.no-requests {
+    font-family: "museo-sans-rounded", sans-serif;
+    padding: 2em;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #59CAE0;
+    text-align: center;
+    padding: 2em;
+    color: #fff;
+    font-weight: bold;
+}

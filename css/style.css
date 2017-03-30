@@ -1,0 +1,18 @@
+html, body {
+    font-family: sans-serif;
+    margin:0;
+}
+
+header {
+  width:100%;
+  background-color: lightblue;
+  background:url();
+}
+.logo h1 {
+  margin:0;
+  padding:1em;
+  width:auto;
+}
+.signup-login {
+  float: right;
+}
