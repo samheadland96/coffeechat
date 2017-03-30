@@ -123,38 +123,47 @@ if (isset($_GET['u'])) {
 
 					<?
 					//$getposts = mysql_query("SELECT * FROM posts WHERE user_posted_to='$username' ORDER BY id DESC LIMIT 10") or die(mysql_error());
-					while ($row = mysql_fetch_assoc($getposts)) {
-											$id = $row['id'];
-											$body = $row['body'];
-											$date_added = $row['date_added'];
-											$added_by = $row['added_by'];
+					$getposts = mysql_query("SELECT * FROM post WHERE added_by='$user' ORDER BY id DESC LIMIT 10") or die(mysql_error());
+ 			   while ($row = mysql_fetch_assoc($getposts)) {
+ 			   						$id = $row['id'];
+ 			   						$body = $row['body'];
+ 			   						$date_added = $row['date_added'];
+ 			   						$added_by = $row['added_by'];
 
-					            $get_user_info = mysql_query("SELECT * FROM users WHERE username='$added_by'");
-					            $get_info = mysql_fetch_assoc($get_user_info);
-					            $profilepic_info = $get_info['profile_pic'];
-					            if ($profilepic_info == "") {
-					            		$profilepic_info = "./img/default_pic.jpg";
-					                 }
-					            else
-					               {
-					              $profilepic_info = "./userdata/profile_pics/".$profilepic_info;
-					                                                }
+ 			                                                   $get_user_info = mysql_query("SELECT * FROM users WHERE username='$added_by'");
+ 			                                                   $get_info = mysql_fetch_assoc($get_user_info);
+ 			                                                   $profilepic_info = $get_info['profile_pic'];
+ 			                                                   if ($profilepic_info == "") {
+ 			                                                    $profilepic_info = "./img/default_pic.jpg";
+ 			                                                   }
+ 			                                                   else
+ 			                                                   {
+ 			                                                    $profilepic_info = "./userdata/profile_pics/".$profilepic_info;
+ 			                                                   }
+
+ 			                                                   ?>
 
 
-											echo "
-											<div class='single-post'>
-					           <img class='profile-icon' src='$profilepic_info'>
+ 			                                                  <?php
+ 			   						echo  "
 
-											<div class='posted_by'>
-											Posted by:
-					                                                <a href='$added_by'>$added_by</a> on $date_added</div>
-					                                                <br/><br/><br/>
-					                                                <div class='profile-body'>
-					                                                $body<br /><p /><p />
-					                                                </div>
-																													</div>
-											";
-					}
+ 			   						<p />
+ 			   						<div class='single-post'>
+
+ 			                                                   <div class='single-post-prof-image'>
+ 			                                                   <img src='$profilepic_info' height=''>
+ 			                                                   </div>
+ 			   						<div class='posted_by'>$added_by</div>
+ 			                                                   <br /><br />
+ 			                                                   <div  style='max-width: 600px;'>
+ 			                                                   $body<br /><p /><p />
+ 			                                                   </div>
+ 			                                                   <p />
+ 			                                                   </div>
+ 			   						";
+ 			   }
+
+
 
 				if (isset($_POST['sendmsg'])) {
 					 header("Location: send_msg.php?u=$username");
