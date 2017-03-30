@@ -146,19 +146,19 @@ else
 <form action="" method="POST" enctype="multipart/form-data">
 <img src="<? echo $profile_pic; ?>" width="70" />
 <input type="file" name="profilepic" /><br />
-<input type="submit"  class="button" name="uploadpic" value="Upload Image">
+<input type="submit"  class="button round" name="uploadpic" value="Upload Image">
 </form>
 <hr />
 <form action="account_settings.php" method="post">
 <p>CHANGE YOUR PASSWORD:</p> <br />
 <div class="medium-6 columns">
 
-Your Old Password: <input type="text" name="oldpassword" id="oldpassword" size="40"><br />
+Your Old Password: <input type="text" class="noborder" name="oldpassword" id="oldpassword" size="40"><br />
 </div>
 <div class="medium-6 columns">
-Your New Password: <input type="text" name="newpassword" id="newpassword" size="40"><br />
-Repeat Password  : <input type="text" name="newpassword2" id="newpassword2" size="40"><br />
-<input type="submit" name="senddata"  class="button" value="Update Information">
+Your New Password: <input type="text" class="noborder"  name="newpassword" id="newpassword" size="40"><br />
+Repeat Password  : <input type="text" class="noborder"  name="newpassword2" id="newpassword2" size="40"><br />
+<input type="submit" name="senddata"  class="button round" value="Update Information">
 </form>
 </div>
 <hr />
@@ -167,22 +167,22 @@ Repeat Password  : <input type="text" name="newpassword2" id="newpassword2" size
 <p>UPDATE YOUR PROFILE INFO:</p> <br />
 <div class="medium-6 columns">
 
-First Name: <input type="text" name="fname" id="fname" size="40" value="<? echo $db_firstname; ?>"><br />
+First Name: <input type="text" class="noborder"  name="fname" id="fname" size="40" value="<? echo $db_firstname; ?>"><br />
 </div>
 <div class="medium-6 columns">
 
-Last Name: <input type="text" name="lname" id="lname" size="40" value="<? echo $db_last_name; ?>"><br />
+Last Name: <input type="text" class="noborder"  name="lname" id="lname" size="40" value="<? echo $db_last_name; ?>"><br />
 </div>
 <div class="medium-12 columns">
 
-About You: <textarea name="bio" id="bio" rows="7" cols="40"><? echo $db_bio; ?></textarea>
+About You: <textarea name="bio" id="bio" class="noborder"  rows="7" cols="40"><? echo $db_bio; ?></textarea>
 </div>
 <hr />
-<input type="submit" class="button" name="updateinfo" value="Update Information">
+<input type="submit" class="button round" name="updateinfo" value="Update Information">
 </form>
 <form action="close_account.php" method="post">
 <p>CLOSE ACCOUNT:</p> <br />
-<input type="submit" name="closeaccount" i class="button" value="Close My Account">
+<input type="submit" name="closeaccount" i class="button round" value="Close My Account">
 </form>
 <hr />
 <br />

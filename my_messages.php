@@ -6,7 +6,7 @@ include("inc/incfiles/headerloggedin.inc.php");
 <h2>My Unread Messages:</h2><p />
 <?php
 //Grab the messages for the logged in user
-$grab_messages = mysql_query("SELECT * FROM pvt_messages WHERE user_to='$user' && opened='no' && deleted='no'");
+$grab_messages = mysql_query("SELECT * FROM messages WHERE user_to='$user' && opened='no' && deleted='no'");
 $numrows = mysql_numrows($grab_messages);
 if ($numrows != 0) {
 while ($get_msg = mysql_fetch_assoc($grab_messages)) {

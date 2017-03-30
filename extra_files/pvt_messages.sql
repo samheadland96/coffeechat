@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `pvt_messages`
 --
 
-CREATE TABLE IF NOT EXISTS `pvt_messages` (
+CREATE TABLE IF NOT EXISTS `messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_from` varchar(255) NOT NULL,
   `user_to` varchar(255) NOT NULL,

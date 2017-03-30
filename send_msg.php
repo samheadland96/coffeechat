@@ -1,5 +1,9 @@
 <?php
 include("inc/incfiles/headerloggedin.inc.php");
+?>
+<div class="row">
+<div class="medium-7 medium-centered columns">
+<?php
 if (isset($_GET['u'])) {
 	$username = mysql_real_escape_string($_GET['u']);
 	if (ctype_alnum($username)) {
@@ -36,14 +40,14 @@ if (isset($_GET['u'])) {
             else
             {
 
-            $send_msg = mysql_query("INSERT INTO pvt_messages VALUES ('','$user','$username','$msg_title','$msg_body','$date','$opened','$deleted')");
+            $send_msg = mysql_query("INSERT INTO messages VALUES ('','$user','$username','$msg_title','$msg_body','$date','$opened','$deleted')");
            echo "Your message has been sent!";
             }
           }
         echo "
 
         <form action='send_msg.php?u=$username' method='POST'>
-        <h2>Compose a Message: ($username)</h2>
+        <h2>Send Message: ($username)</h2>
         <input type='text' name='msg_title' size='30' onClick=\"value=''\" value='Enter the message title here ...'><p />
         <textarea cols='50' rows='12' name='msg_body'>Enter the message you wish to send ...</textarea><p />
         <input type='submit' name='submit' value='Send Message'>
@@ -59,3 +63,4 @@ if (isset($_GET['u'])) {
 	}
 }
 ?>
+</div>

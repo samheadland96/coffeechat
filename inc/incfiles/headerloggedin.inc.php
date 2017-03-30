@@ -37,7 +37,7 @@ $unread_numrows = "(".$unread_numrows.")";
 			<div class="row">
   <div class="small-6 columns">
 		<div class="logo-loggedin">
-		<a href="home.php"><img src="../img/logo(white).png"></a>
+		<a href="home.php"><img src="../img/logo-mug.png"></a>
 	</div>
 	</div>
 

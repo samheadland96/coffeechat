@@ -56,7 +56,12 @@ bold {
     color: #000;
     border-radius: 50px;
 }
+.round {
+  border-radius: 50px;
+  font-family: "museo-sans-rounded", sans-serif;
+  font-weight: bold;
 
+}
 .addfriend-sendmsg {
     color: #000;
     border-radius: 50px;
@@ -70,8 +75,14 @@ bold {
     margin: 2em 0;
     font-family: "museo-sans-rounded", sans-serif;
 }
-
-
+hr, br {
+color: #59cae0;
+}
+.noborder {
+  border:none;
+  box-shadow: none;
+  border-bottom: 2px solid #59cae0;
+}
 /* HEADER */
 
 header {
@@ -96,7 +107,7 @@ header {
     width: 40%;
     border-radius: 30px;
     float: right;
-    margin: 1.3em 0 0 0;
+    margin: 1em 0 0 0;
 }
 
 
@@ -134,7 +145,7 @@ header {
 }
 
 .logo-loggedin {
-    width: 7em;
+    width: 5em;
     padding: 1em;
 }
 
@@ -273,10 +284,36 @@ h1 {
 .comment-body {
     font-family: "museo-sans-rounded", sans-serif;
 }
+/* HOME */
+.home-post {
+  border: none;
+  border-bottom: 4px solid #59CAE0;
+  box-shadow: none;
+  resize: none;
+  padding:1em 0 0 0;
+  font-size: 1.5em;
+}
+.home-post:focus {
+  border: none;
+  border-bottom: 4px solid #59CAE0;
+  box-shadow: none;
 
-
+}
 /* PROFILE PAGE */
+.profile-post {
+  border: none;
+  border-bottom: 4px solid #59CAE0;
+  box-shadow: none;
+  resize: none;
+  padding:1em 0 0 0;
+  font-size: 1.5em;
+}
+.profile-post:focus {
+  border: none;
+  border-bottom: 4px solid #59CAE0;
+  box-shadow: none;
 
+}
 .profileposts {}
 
 .profile-icon {
