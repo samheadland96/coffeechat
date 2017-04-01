@@ -213,9 +213,9 @@ h1 {
     margin: 1em 0;
 }
 
-.single-post-prof-image {
+.single-post-prof-image img {
     float: left;
-    border-radius: 40px;
+    border-radius: 60px;
     width: 60px;
 }
 
@@ -324,7 +324,7 @@ h1 {
 
 .posted_by {
     font-family: "museo-sans-rounded", sans-serif;
-    font-weight: ;
+    font-weight:bold ;
     margin: 1em 0 0 1em;
     float: left;
 }
