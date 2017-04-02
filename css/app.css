@@ -299,6 +299,9 @@ h1 {
   box-shadow: none;
 
 }
+.date {
+  font-size: 0.7em;
+}
 /* PROFILE PAGE */
 .profile-post {
   border: none;
@@ -350,7 +353,12 @@ h1 {
     font-weight: bold;
     text-align: center;
 }
+.profile-name {
+  text-align: center;
+  font-family: "museo-sans", sans-serif;
 
+  margin:0 0 1em 0;
+}
 .profile-bio {
     text-align: center;
     background: #eaeaea;

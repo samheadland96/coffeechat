@@ -74,12 +74,15 @@ $query = mysql_query($sqlCommand) or die (mysql_error());
   <?php
   //If the user is logged in
 
-  $getposts = mysql_query("SELECT * FROM post WHERE username='$user' OR user_id IN (SELECT user2_id FROM following WHERE user1_id='$user_id') ORDER BY date_added DESC LIMIT 10 ") or die(mysql_error());
+  $getposts = mysql_query("SELECT * FROM post WHERE username='$user' & user_id IN (SELECT user2_id FROM following WHERE user1_id='$user_id') ORDER BY date_added DESC LIMIT 10 ") or die(mysql_error());
+
   while ($row = mysql_fetch_assoc($getposts)) {
   						$id = $row['id'];
   						$body = $row['body'];
               $added_by = $row['username'];
   						$date_added = $row['date_added'];
+
+
 $get_user_info = mysql_query("SELECT * FROM users WHERE username='$added_by'");
 $get_info = mysql_fetch_assoc($get_user_info);
 
@@ -109,6 +112,7 @@ $profilepic_info = "./userdata/profile_pics/".$profilepic_info;
       <div class='single-post-body'>$body</div>
       <br/>
       <div class=''>$postimage</div>
+      <p class='date'>$date_added</p>
         <p />
       </div>";
   }

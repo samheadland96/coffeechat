@@ -8,15 +8,20 @@ include('./classes/Notify.php');
 
 
 <?php
+
 if (isset($_GET['u'])) {
 	$username = mysql_real_escape_string($_GET['u']);
 	if (ctype_alnum($username)) {
  	//check user exists
-	$check = mysql_query("SELECT username, first_name FROM users WHERE username='$username'");
+	$check = mysql_query("SELECT id, username, first_name, last_name FROM users WHERE username='$username'");
 	if (mysql_num_rows($check)===1) {
+	$id = $row['id'];
 	$get = mysql_fetch_assoc($check);
 	$username = $get['username'];
 	$firstname = $get['first_name'];
+	$lastname = $get['last_name'];
+	$user_id = $_SESSION['id'];
+
 
 	}
 	else
@@ -103,8 +108,33 @@ if (isset($_GET['u'])) {
 <div class="small-4 large-4 columns">
 <img class="profile-image" src="<? echo $profile_pic; ?>" alt="<? echo $username; ?>'s Profile" title="<? echo $username; ?>'s Profile" />
 <div class="profile-title"><h3 class="profile-username"><?php echo $username; ?></h3></div>
+<div class="profile-title"><h5 class="profile-name"><?php echo $firstname; ?> <?php echo $lastname; ?></h5></div>
+<h6 class="follow-section">Followers: <a href=""><?php echo $followers; ?></a> | Following: <a href=""><?php echo $following; ?></a></h6>
 
-<input type="submit" class="button addfriend-sendmsg" name="follow" value="Follow" />
+
+<?php
+
+if($user_id){
+	if($user_id!=$id){
+		include 'connect.php';
+		$query2 = mysql_query("SELECT id
+								 FROM following
+								 WHERE user1_id='$user_id' AND user2_id='$id'
+								");
+		mysql_close($conn);
+		if(mysql_num_rows($query2)>=1){
+			echo "<a href='unfollow.php?userid=$id&username=$username' class='button'>Unfollow</a>";
+		}
+		else{
+			echo "<a href='follow.php?userid=$id&username=$username' class='button'>Follow</a>";
+		}
+	}
+}
+?>
+
+
+
+
 
  <form action="send_msg.php?u=<? echo $username; ?>" method="POST">
 
