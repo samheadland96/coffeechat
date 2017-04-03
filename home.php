@@ -58,7 +58,7 @@ $query = mysql_query($sqlCommand) or die (mysql_error());
 
     <!-- Post form for user to add post -->
           <form class="" action="" method="POST">
-        	   <textarea type="text" class="home-post" name="post" placeholder="Post an update!"rows="" cols=""></textarea>
+        	   <textarea type="text" class="home-post" name="post" placeholder="Write a post, upload a photo, review a coffee! "rows="" cols=""></textarea>
           <input type="file" name="post-image" /><br />
         	<input class="button round"type="submit" name="send" value="Post"/>
         	</form>

@@ -4,7 +4,7 @@
 <?php
 
 
-$username = $_GET['u'];
+$username = $_GET[''];
 
 $results = $conn->query("SELECT * FROM users WHERE username='$username'");
 

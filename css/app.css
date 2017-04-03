@@ -63,9 +63,8 @@ bold {
     font-weight: bold;
 }
 
-.addfriend-sendmsg {
-    color: #000;
-    border-radius: 50px;
+.follow-message {
+  
     text-align: center;
     margin: 0.5em auto;
     display: block;

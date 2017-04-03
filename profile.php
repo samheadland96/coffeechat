@@ -22,7 +22,6 @@ if (isset($_GET['u'])) {
 	$lastname = $get['last_name'];
 	$user_id = $_SESSION['id'];
 
-
 	}
 	else
 	{
@@ -111,37 +110,37 @@ if (isset($_GET['u'])) {
 <div class="profile-title"><h5 class="profile-name"><?php echo $firstname; ?> <?php echo $lastname; ?></h5></div>
 <h6 class="follow-section">Followers: <a href=""><?php echo $followers; ?></a> | Following: <a href=""><?php echo $following; ?></a></h6>
 
-
+<div class="row">
+	<div class="medium-6 columns">
 <?php
 
 if($user_id){
 	if($user_id!=$id){
 		include 'connect.php';
-		$query2 = mysql_query("SELECT id
-								 FROM following
-								 WHERE user1_id='$user_id' AND user2_id='$id'
+		$query2 = mysql_query("SELECT id FROM following WHERE user1_id='$user_id' AND user2_id='$id'
 								");
 		mysql_close($conn);
 		if(mysql_num_rows($query2)>=1){
-			echo "<a href='unfollow.php?userid=$id&username=$username' class='button'>Unfollow</a>";
+			echo "<a href='unfollow.php?userid=$id&username=$username' class='button round follow-message'>Unfollow</a>";
 		}
 		else{
-			echo "<a href='follow.php?userid=$id&username=$username' class='button'>Follow</a>";
+			echo "<a href='follow.php?userid=$id&username=$username' class='button round follow-message'>Follow</a>";
 		}
+
+
 	}
 }
+
 ?>
 
 
 
 
-
- <form action="send_msg.php?u=<? echo $username; ?>" method="POST">
-
- <? echo $errorMsg; ?>
- <input type="submit" class="button addfriend-sendmsg" name="sendmsg" value="Send Message" />
- <!--<iframe src='http://localhost/like_but_frame.php?uid=<?php echo $username; ?>' style='border: 0px;height: 23px; width: 110px;'> </iframe>-->
- </form>
+</div>
+<div class="medium-6 columns">
+	<a href="send_msg.php?u=<?php echo $username; ?>" class='button round follow-message'>Message</a>
+</div>
+</div>
 <div class="profileLeftSideContent">
 
 <?php
