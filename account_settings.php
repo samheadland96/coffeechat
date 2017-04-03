@@ -137,20 +137,26 @@ else
   }
 
 ?>
-<hr />
+
 <div class="row">
   <div class="medium-10 medium-centered columns">
-    <h2>Edit your Account Settings</h2>
+    <h2 class="account-settings">Account Settings</h2>
 
-<p>UPLOAD YOUR PROFILE PHOTO:</p>
+<div class="large-7 columns">
+  <p>UPLOAD PROFILE PICTURE:</p>
+
 <form action="" method="POST" enctype="multipart/form-data">
-<img src="<? echo $profile_pic; ?>" width="70" />
 <input type="file" name="profilepic" /><br />
 <input type="submit"  class="button round" name="uploadpic" value="Upload Image">
 </form>
-<hr />
+</div>
+<div class="large-5 columns">
+<img src="<? echo $profile_pic; ?>" style="border-radius:60px; border: 2px solid #59cae0" width="110" />
+</div>
+
 <form action="account_settings.php" method="post">
-<p>CHANGE YOUR PASSWORD:</p> <br />
+<p class="settings-title">CHANGE YOUR PASSWORD:</p> <br />
+<div class="row">
 <div class="medium-6 columns">
 
 Your Old Password: <input type="text" class="noborder" name="oldpassword" id="oldpassword" size="40"><br />
@@ -161,10 +167,10 @@ Repeat Password  : <input type="text" class="noborder"  name="newpassword2" id="
 <input type="submit" name="senddata"  class="button round" value="Update Information">
 </form>
 </div>
-<hr />
+</div>
 <div class="row">
 <form action="account_settings.php" method="post">
-<p>UPDATE YOUR PROFILE INFO:</p> <br />
+<p class="settings-title">UPDATE YOUR PROFILE INFO:</p> <br />
 <div class="medium-6 columns">
 
 First Name: <input type="text" class="noborder"  name="fname" id="fname" size="40" value="<? echo $db_firstname; ?>"><br />
@@ -177,14 +183,13 @@ Last Name: <input type="text" class="noborder"  name="lname" id="lname" size="40
 
 About You: <textarea name="bio" id="bio" class="noborder"  rows="7" cols="40"><? echo $db_bio; ?></textarea>
 </div>
-<hr />
 <input type="submit" class="button round" name="updateinfo" value="Update Information">
 </form>
 <form action="close_account.php" method="post">
-<p>CLOSE ACCOUNT:</p> <br />
+<p class="settings-title">CLOSE ACCOUNT:</p> <br />
 <input type="submit" name="closeaccount" i class="button round" value="Close My Account">
 </form>
-<hr />
+
 <br />
 <br />
 </div>
