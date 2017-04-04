@@ -63,8 +63,25 @@ bold {
     font-weight: bold;
 }
 
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.file-upload input.file-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
 .follow-message {
-  
     text-align: center;
     margin: 0.5em auto;
     display: block;
@@ -72,8 +89,9 @@ bold {
 
 .follow-section {
     text-align: center;
-    margin: 2em 0;
+    margin: 1em 0;
     font-family: "museo-sans-rounded", sans-serif;
+    font-weight: bold;
 }
 
 hr, br {
@@ -148,7 +166,10 @@ header {
     border: none;
     box-shadow: none;
 }
-
+.signup-inputs:focus {
+    border: 2px solid #59cae0;
+    box-shadow: none;
+}
 .logo {
     width: 9em;
     padding: 1em;
@@ -382,7 +403,8 @@ h1 {
     text-align: center;
     background: #eaeaea;
     padding: 1.5em;
-    margin: 2em 2em;
+    margin: 1em 2em;
+    border-radius: 10px;
 }
 
 .single-friends {
@@ -407,7 +429,6 @@ h1 {
 .no-requests {
     font-family: "museo-sans-rounded", sans-serif;
     padding: 2em;
-
 }
 
 
@@ -416,12 +437,14 @@ h1 {
 .account-settings {
     font-family: "museo-sans-rounded", sans-serif;
     font-weight: bold;
-    margin:1em 0;
+    margin: 1em 0;
 }
+
 .settings-title {
-  font-family: "museo-sans-rounded", sans-serif;
-  font-weight: bold;
+    font-family: "museo-sans-rounded", sans-serif;
+    font-weight: bold;
 }
+
 
 /* FOOTER */
 

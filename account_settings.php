@@ -153,9 +153,12 @@ else
 <div class="large-5 columns">
 <img src="<? echo $profile_pic; ?>" style="border-radius:60px; border: 2px solid #59cae0" width="110" />
 </div>
-
-<form action="account_settings.php" method="post">
-<p class="settings-title">CHANGE YOUR PASSWORD:</p> <br />
+    <div class="row">
+      <div class="medium-12 columns">
+      <form action="account_settings.php" method="post">
+      <p class="settings-title">CHANGE YOUR PASSWORD:</p> <br />
+    </div>
+</div>
 <div class="row">
 <div class="medium-6 columns">
 
@@ -193,4 +196,4 @@ About You: <textarea name="bio" id="bio" class="noborder"  rows="7" cols="40"><?
 <br />
 <br />
 </div>
-</div
+</div>

@@ -20,6 +20,8 @@ $unread_numrows = "(".$unread_numrows.")";
 	<meta charset="utf-8">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script src="js/main.js" type="text/javascript"></script>
+		<script src="js/parsley.min.js" type="text/javascript"></script>
+
 		<link rel="stylesheet" href="css/foundation.css">
 		<link rel="stylesheet" href="css/app.css">
 
@@ -42,7 +44,8 @@ $unread_numrows = "(".$unread_numrows.")";
 
 
 
-			<?
+			<?php
+
 			if (isset($_SESSION["user_login"])) {
 			echo '
 

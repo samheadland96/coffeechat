@@ -111,14 +111,20 @@ if (isset($_GET['u'])) {
 <h6 class="follow-section">Followers: <a href=""><?php echo $followers; ?></a> | Following: <a href=""><?php echo $following; ?></a></h6>
 
 <div class="row">
+	<?php
+	  $about_query = mysql_query("SELECT bio FROM users WHERE username='$username'");
+	  $get_result = mysql_fetch_assoc($about_query);
+	  $about_the_user = $get_result['bio'];
+
+	  echo "<p class='profile-bio'><bold>Bio</bold><br>$about_the_user</p>";
+	?>
 	<div class="medium-6 columns">
 <?php
 
 if($user_id){
 	if($user_id!=$id){
 		include 'connect.php';
-		$query2 = mysql_query("SELECT id FROM following WHERE user1_id='$user_id' AND user2_id='$id'
-								");
+		$query2 = mysql_query("SELECT id FROM following WHERE user1_id='$user_id' AND user2_id='$id'");
 		mysql_close($conn);
 		if(mysql_num_rows($query2)>=1){
 			echo "<a href='unfollow.php?userid=$id&username=$username' class='button round follow-message'>Unfollow</a>";
@@ -141,16 +147,8 @@ if($user_id){
 	<a href="send_msg.php?u=<?php echo $username; ?>" class='button round follow-message'>Message</a>
 </div>
 </div>
-<div class="profileLeftSideContent">
 
-<?php
-  $about_query = mysql_query("SELECT bio FROM users WHERE username='$username'");
-  $get_result = mysql_fetch_assoc($about_query);
-  $about_the_user = $get_result['bio'];
 
-  echo "<p class='profile-bio'><bold>Bio</bold><br>$about_the_user</p>";
-?>
-</div>
 <div class="profileLeftSideContent">
 
 <div class="profileLeftSideContent">
