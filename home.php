@@ -76,7 +76,7 @@ $query = mysql_query($sqlCommand) or die (mysql_error());
   <?php
   //If the user is logged in
 
-  $getposts = mysql_query("SELECT * FROM post WHERE username='$user' & user_id IN (SELECT user2_id FROM following WHERE user1_id='$user_id') ORDER BY date_added DESC LIMIT 10 ") or die(mysql_error());
+  $getposts = mysql_query("SELECT * FROM post WHERE username='$user' AND user_id IN (SELECT user2_id FROM following WHERE user1_id='$user_id') ORDER BY date_added DESC LIMIT 10 ") or die(mysql_error());
 
   while ($row = mysql_fetch_assoc($getposts)) {
     $id = $row['id'];

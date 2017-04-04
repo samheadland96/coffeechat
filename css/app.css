@@ -445,7 +445,12 @@ h1 {
     font-weight: bold;
 }
 
+/* SEARCH */
 
+.search-pic img {
+  border-radius: 60px;
+  width: 60px;
+}
 /* FOOTER */
 
 footer {
