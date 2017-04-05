@@ -4,7 +4,7 @@ include("inc/incfiles/headerloggedin.inc.php");
 ?>
 <?php
 if (isset($_FILES['post-image'])) {
- if (((@$_FILES["post-image"]["type"]=="image/jpeg") || (@$_FILES["post-image"]["type"]=="image/png") || (@$_FILES["post-image"]["type"]=="image/gif"))&&(@$_FILES["post-image"]["size"] < 1048576)) //1 Megabyte
+ if (((@$_FILES["post-image"]["type"]=="image/jpeg") || (@$_FILES["profilepic"]["type"]=="image/png") || (@$_FILES["post-image"]["type"]=="image/gif"))&&(@$_FILES["profilepic"]["size"] < 1048576)) //1 Megabyte
 {
  $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
  $rand_dir_name = substr(str_shuffle($chars), 0, 15);
@@ -12,7 +12,7 @@ if (isset($_FILES['post-image'])) {
 
  if (file_exists("userdata/user_photos/$rand_dir_name/".@$_FILES["post-image"]["name"]))
  {
-  echo @$_FILES["post-image"]["name"]." Already exists";
+  echo @$_FILES["profilepic"]["name"]." Already exists";
  }
  else
  {
@@ -76,13 +76,13 @@ $query = mysql_query($sqlCommand) or die (mysql_error());
   <?php
   //If the user is logged in
 
-  $getposts = mysql_query("SELECT * FROM post WHERE username='$user' AND user_id IN (SELECT user2_id FROM following WHERE user1_id='$user_id') ORDER BY date_added DESC LIMIT 10 ") or die(mysql_error());
+  $getposts = mysql_query("SELECT * FROM post WHERE username='$username' & user_id IN (SELECT follower_id FROM following WHERE user_id='$user_id') ORDER BY date_added DESC LIMIT 10 ") or die(mysql_error());
 
   while ($row = mysql_fetch_assoc($getposts)) {
-    $id = $row['id'];
-  	$body = $row['body'];
-    $added_by = $row['username'];
-  	$date_added = $row['date_added'];
+  						$id = $row['id'];
+  						$body = $row['body'];
+              $added_by = $row['username'];
+  						$date_added = $row['date_added'];
 
 
 $get_user_info = mysql_query("SELECT * FROM users WHERE username='$added_by'");
@@ -97,18 +97,6 @@ $profilepic_info = "./img/default_pic.jpg";
 else
 {
 $profilepic_info = "./userdata/profile_pics/".$profilepic_info;
-}
-
-$get_photo_info = mysql_query("SELECT * FROM post WHERE photo='$postimage'");
-$get_info = mysql_fetch_assoc($get_photo_info);
-
-$photo_info = $get_info['photo'];
-if ($photo_info == "") {
-$photo_info = "";
-}
-else
-{
-$photo_info = "./userdata/user_photos/".$photo_info;
 }
 ?>
 
@@ -126,7 +114,7 @@ $photo_info = "./userdata/user_photos/".$photo_info;
       <div class='single-post-body'>$body</div>
       <br/>
       <div class=''>
-      <img src='$photo_info'>
+      <img src='$postimage'>
       </div>
       <p class='date'>$date_added</p>
         <p />
