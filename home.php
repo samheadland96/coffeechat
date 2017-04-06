@@ -48,7 +48,7 @@ $added_by = $user;
 $user_posted_to = $username;
 $user_id = $_SESSION['id'];
 
-$sqlCommand = "INSERT INTO post VALUES('', '$post','$date_added','$added_by', '$user_id', '$postimage')";
+$sqlCommand = "INSERT INTO post VALUES('', '$post','$date_added','$added_by', 's, '$postimage')";
 $query = mysql_query($sqlCommand) or die (mysql_error());
 
 }

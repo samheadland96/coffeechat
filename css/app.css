@@ -12,6 +12,10 @@ iframe {
     height: auto;
     border: none;
 }
+input:focus {
+  border: none;
+  box-shadow: none;
+}
 
 p {
     margin: 0;
@@ -321,6 +325,27 @@ h1 {
 
 .comment-body {
     font-family: "museo-sans-rounded", sans-serif;
+}
+
+
+/* LOGIN & SIGNUP PAGE */
+
+.signup-page-h3 {
+    text-align: center;
+    font-family: "museo-sans-rounded", sans-serif;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.login-signup-inputs {
+    border: 3px solid #59cae0;
+    box-shadow: none;
+    padding: 1.3em;
+}
+
+.login-signup-button {
+    margin: 0.5em auto;
+    display: block;
 }
 
 

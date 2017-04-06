@@ -1,4 +1,4 @@
-<? include("inc/incfiles/header.inc.php"); ?>
+<? include("inc/incfiles/headerloggedin.inc.php"); ?>
 <?php
 if (!isset($_SESSION["user_login"])) {
     echo "";
@@ -101,44 +101,36 @@ if (isset($_POST["user_login"]) && isset($_POST["password_login"])) {
 ?>
 <div class="row">
   <div class="medium-10 medium-centered columns">
-    <h2 class="title">CoffeeChat is a new social networking website, aimed to connect those with the same interest together: Coffee!</h2>
-  </div>
+    <h2>Join Now or Login with your account!</h2>
 </div>
-<div class="row features-section">
-  <div class="large-4 columns features">
-<img src="img/features1.jpg">
-<h3><h3>
+  <div class="medium-10 medium-centered columns">
+<div class="large-6 columns">
+  <h3 class="signup-page-h3">Sign up!</h3>
+  <form action="" method="post">
 
-  </div>
-  <div class="large-4 columns features">
-    <img src="img/features2.jpg">
-    <h3>Title<h3>
-</div>
-  <div class="large-4 columns features">
-    <img src="img/features3.jpg">
-    <h3>Title<h3>
-
-</div>
+  <input type="text" size="40" name="fname"  class="login-signup-inputs round" placeholder="First Name" title="First Name" value="<? echo $fn; ?>" required=""><p />
+  <input type="text" size="40" name="lname" class="login-signup-inputs round" placeholder="Last Name" title="Last Name" value="<? echo $ln; ?>" required=""><p />
+  <input type="text" size="40" name="username" class="login-signup-inputs round" placeholder="Username" title="Username" value="<? echo $un; ?>" required=""><p />
+  <input type="text" size="40" name="email" class="login-signup-inputs round" placeholder="Email" title="Email" value="<? echo $em; ?>" required=""><p />
+  <input type="password" size="40" class="login-signup-inputs round" name="password" placeholder="Password"  value="" required=""><p />
+  <input type="password" size="40" class="login-signup-inputs round" name="password2" placeholder="Repeat Password" value="" required=""><p/>
+  <input type="submit"class="login-signup-button button round"name="reg" value="Sign Up!">
+  </form>
 </div>
 
-<section class="row signup-section" id="signup">
-    <h2>Sign up!</h2>
-<div class="medium-10 medium-centered columns">
-
-  <div class="medium-7 medium-centered columns">
-   <form action="" method="post">
-
-   <input type="text" size="40" name="fname"  class="signup-inputs round" placeholder="First Name" title="First Name" value="<? echo $fn; ?>" required=""><p />
-   <input type="text" size="40" name="lname" class="signup-inputs round" placeholder="Last Name" title="Last Name" value="<? echo $ln; ?>" required=""><p />
-   <input type="text" size="40" name="username" class="signup-inputs round" placeholder="Username" title="Username" value="<? echo $un; ?>" required=""><p />
-   <input type="text" size="40" name="email" class="signup-inputs round" placeholder="Email" title="Email" value="<? echo $em; ?>" required=""><p />
-   <input type="password" size="40" class="signup-inputs round" name="password" placeholder="Password"  value="" required=""><p />
-   <input type="password2" size="40" class="signup-inputs round" name="password2" placeholder="Repeat Password" value="" required=""><p/>
-   <input type="submit" style="text-align:center; margin:0 auto; display:block;"class="button round"name="reg" value="Sign Up!">
-   </form>
-  </div>
+<div class="large-6 columns">
+  <h3 class="signup-page-h3">Login</h3>
+  <form action="index.php" method="post" name="form1">
+  <input  type="text" class="login-signup-inputs round" name="user_login" placeholder="Username" /><p />
+  <input type="password" class="login-signup-inputs round" name="password_login" placeholder="Password" /><p />
+  <input type="submit" name="button" class="login-signup-button button round" value="Login">
+  </form>
 </div>
-</section>
+
+</div>
+</div>
+
+
 <footer>
 <p>&copy; CoffeeChat 2017</p>
 </footer>

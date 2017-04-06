@@ -51,7 +51,7 @@ $unread_numrows = "(".$unread_numrows.")";
 
       <div class="small-6 columns">
         <form action="search.php" method="GET" id="search">
-      <input class="search" type="text" name="result" placeholder="Search" />
+      <input class="search" type="text" name="result" placeholder="Search" required="" />
       </form>
       </div>
 </header>

@@ -90,7 +90,7 @@ $unread_numrows = "(".$unread_numrows.")";
 
 				<div class="medium-10 medium-centered slogan">
 <h1>Networking for Coffee Lovers.</h1>
-<button href="#signup" class="button join">Join Now!</button>
+<a href="login.php"<button class="button join">Join Now!</button></a>
 			</div>
 		</div>
 
