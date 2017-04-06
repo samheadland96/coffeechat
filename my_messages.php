@@ -1,12 +1,13 @@
 <?php
 include("inc/incfiles/headerloggedin.inc.php");
 ?>
-<div class="medium-10 medium-centered columns">
+<div class="row message-row">
+<div class="medium-6 columns">
 
 <h2>My Unread Messages:</h2><p />
 <?php
 //Grab the messages for the logged in user
-$grab_messages = mysql_query("SELECT * FROM messages WHERE user_to='$user' && opened='no' && deleted='no'");
+$grab_messages = mysql_query("SELECT * FROM messages WHERE user_to='$user' && opened='no'");
 $numrows = mysql_numrows($grab_messages);
 if ($numrows != 0) {
 while ($get_msg = mysql_fetch_assoc($grab_messages)) {
@@ -48,14 +49,20 @@ while ($get_msg = mysql_fetch_assoc($grab_messages)) {
 
       if (@$_POST['setopened_' . $id . '']) {
        //Update the private messages table
-       $setopened_query = mysql_query("UPDATE pvt_messages SET opened='yes' WHERE id='$id'");
+       $setopened_query = mysql_query("UPDATE messages SET opened='yes' WHERE id='$id'");
       }
 
       echo "
       <form method='POST' action='my_messages.php' name='$msg_title'>
-      <b><a href='$user_from'>$user_from</a></b>
-      <input type='button' name='openmsg' value='$msg_title' onClick='javascript:toggle$id()'>
-      <input type='submit' name='setopened_$id' value=\"I've Read This\">
+      <div class='medium-6 columns'>
+
+      <b><a class='message-user'href='$user_from'>$user_from</a></b><br/>
+      <input type='button' class='message-open' name='openmsg' value=\"View Message\" onClick='javascript:toggle$id()'>
+      </div>
+      <div class='medium-6 columns'>
+
+      <input type='submit' class='button round markasread' name='setopened_$id' value=\"Mark as Read\">
+      </div>
       </form>
       <div id='toggleText$id' style='display: none;'>
       <br />$msg_body
@@ -69,10 +76,13 @@ else
  echo "You haven't read any messages yet.";
 }
 ?>
+</div>
+<div class="medium-6 columns">
+
 <h2>My Read Messages:</h2><p />
 <?
 //Grab the messages for the logged in user
-$grab_messages = mysql_query("SELECT * FROM pvt_messages WHERE user_to='$user' && opened='yes' && deleted='no'");
+$grab_messages = mysql_query("SELECT * FROM messages WHERE user_to='$user' && opened='yes'");
 $numrows_read = mysql_numrows($grab_messages);
 if ($numrows_read != 0) {
 while ($get_msg = mysql_fetch_assoc($grab_messages)) {
@@ -113,7 +123,7 @@ while ($get_msg = mysql_fetch_assoc($grab_messages)) {
       $msg_body = $msg_body;
 
       if (@$_POST['delete_' . $id . '']) {
-       $delete_msg_query = mysql_query("UPDATE pvt_messages SET deleted='yes' WHERE id='$id'");
+       $delete_msg_query = mysql_query("UPDATE messages SET deleted='yes' WHERE id='$id'");
       }
       if (@$_POST['reply_' . $id . '']) {
        echo "<meta http-equiv=\"refresh\" content=\"0; url=msg_reply.php?u=$user_from\">";
@@ -121,14 +131,15 @@ while ($get_msg = mysql_fetch_assoc($grab_messages)) {
 
       echo "      <form method='POST' action='my_messages.php' name='$msg_title'>
       <b><a href='$user_from'>$user_from</a></b>
-      <input type='button' name='openmsg' value='$msg_title' onClick='javascript:toggle$id()'>
-      <input type='submit' name='delete_$id' value=\"X\" title='Delete Message'>
-      <input type='submit' name='reply_$id' value=\"Reply\">
+      <br/>
+      <input type='button' class='message-open' name='openmsg' value='$msg_title' onClick='javascript:toggle$id()'><br/></br>
+      <input type='submit' class='button round' name='delete_$id' value=\"Delete\" title='Delete Message'>
+      <input type='submit' class='button round' name='reply_$id' value=\"Reply\">
       </form>
       <div id='toggleText$id' style='display: none;'>
       <br />$msg_body
       </div>
-      <hr /><br />";
+      <br />";
 }
 }
 else
@@ -137,4 +148,5 @@ else
 }
 ?>
 
+</div>
 </div>

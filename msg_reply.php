@@ -1,5 +1,9 @@
 <?
-include("inc/incfiles/header.inc.php");
+include("inc/incfiles/headerloggedin.inc.php");
+?>
+<div class="row">
+<div class="medium-7 medium-centered columns">
+<?php
 if (isset($_GET['u'])) {
 	$username = mysql_real_escape_string($_GET['u']);
 	if (ctype_alnum($username)) {
@@ -8,7 +12,7 @@ if (isset($_GET['u'])) {
 	if (mysql_num_rows($check)===1) {
 	$get = mysql_fetch_assoc($check);
 	$username = $get['username'];
-	
+
 	//Check user isn't sending themself a private message
 	if ($username != $user) {
           if (isset($_POST['submit'])) {
@@ -17,7 +21,7 @@ if (isset($_GET['u'])) {
             $date = date("Y-m-d");
             $opened = "no";
             $deleted = "no";
-            
+
             if ($msg_title == "Enter the message title here ...") {
              echo "Please give your message a title.";
             }
@@ -36,12 +40,12 @@ if (isset($_GET['u'])) {
             else
             {
 
-            $send_msg = mysql_query("INSERT INTO pvt_messages VALUES ('','$user','$username','$msg_title','$msg_body','$date','$opened','$deleted')");
+            $send_msg = mysql_query("INSERT INTO pvt_messages VALUES ('','$user','$username','$msg_title','$msg_body','$date','$opened')");
            echo "Your message has been sent!";
             }
           }
         echo "
-        
+
         <form action='send_msg.php?u=$username' method='POST'>
         <h2>Compose a Message: ($username)</h2>
         <input type='text' name='msg_title' size='30' onClick=\"value=''\" value='Enter the message title here ...'><p />
@@ -59,3 +63,5 @@ if (isset($_GET['u'])) {
 	}
 }
 ?>
+</div>
+</div>

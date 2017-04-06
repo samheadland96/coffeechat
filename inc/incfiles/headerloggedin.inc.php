@@ -8,7 +8,7 @@ else {
 $user = "";
 }
 
-$get_unread_query = mysql_query("SELECT opened FROM pvt_messages WHERE user_to='$user' && opened='no'");
+$get_unread_query = mysql_query("SELECT opened FROM messages WHERE user_to='$user' && opened='no'");
 $get_unread = mysql_fetch_assoc($get_unread_query);
 $unread_numrows = mysql_num_rows($get_unread_query);
 $unread_numrows = "(".$unread_numrows.")";
@@ -51,7 +51,7 @@ $unread_numrows = "(".$unread_numrows.")";
 
       <div class="small-6 columns">
         <form action="search.php" method="GET" id="search">
-      <input class="search" type="text" name="u" placeholder="Search" />
+      <input class="search" type="text" name="result" placeholder="Search" />
       </form>
       </div>
 </header>
@@ -66,7 +66,6 @@ $unread_numrows = "(".$unread_numrows.")";
 </a>
 	<a class="header-links" href="account_settings.php"><i class="fa fa-cog " aria-hidden="true"></i></a>
 	<a class="header-links" href="my_messages.php"><i class="fa fa-comments " aria-hidden="true"></i> ' . $unread_numrows . '</a>
-	<a class="header-links" href="friend_requests.php"><i class="fa fa-users " aria-hidden="true"></i></a>
 
 
 	<a class="header-links" href="logout.php">Logout</a>

@@ -3,6 +3,11 @@ html, body {
     margin: 0;
 }
 
+h2 {
+    font-family: "museo-sans-rounded", sans-serif;
+    font-weight: bold;
+}
+
 iframe {
     height: auto;
     border: none;
@@ -166,10 +171,12 @@ header {
     border: none;
     box-shadow: none;
 }
+
 .signup-inputs:focus {
     border: 2px solid #59cae0;
     box-shadow: none;
 }
+
 .logo {
     width: 9em;
     padding: 1em;
@@ -445,12 +452,41 @@ h1 {
     font-weight: bold;
 }
 
+
 /* SEARCH */
 
 .search-pic img {
-  border-radius: 60px;
-  width: 60px;
+    border-radius: 60px;
+    width: 60px;
 }
+
+
+/* MESSAGES */
+
+.message-row {
+    padding: 3em 0;
+}
+
+.message-open {
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+    font-family: "museo-sans-rounded", sans-serif;
+}
+
+.message-open:focus {
+    background: none;
+    border: none;
+    font-weight: bold;
+    box-shadow: none;
+}
+
+.markasread {
+    float: right;
+}
+
+
 /* FOOTER */
 
 footer {

@@ -1,7 +1,7 @@
 <? include("inc/incfiles/headerloggedin.inc.php"); ?>
 
 <?php
-    $searchresult = $_GET['u'];
+    $searchresult = $_GET['result'];
 ?>
 <div class="row">
   <div class='medium-10 medium-centered columns'>

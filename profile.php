@@ -1,9 +1,4 @@
 <? include("inc/incfiles/headerloggedin.inc.php");
-
-include('./classes/Login.php');
-include('./classes/Post.php');
-include('./classes/Image.php');
-include('./classes/Notify.php');
 ?>
 
 
@@ -74,24 +69,19 @@ if (isset($_GET['u'])) {
  		 }
 
  			                                                   ?>
-
-
- 			                                                  <?php
- 			   						echo  "
-
- 			   						<p />
- 			   						<div class='single-post'>
-
- 			                                                   <div class='single-post-prof-image'>
- 			                                                   <img src='$profilepic_info' height=''>
- 			                                                   </div>
- 			   						<div class='posted_by'>$added_by</div>
- 			                                                   <br /><br />
- 			                                                   <div class='single-post-body'>
- 			                                                   $body<br /><p /><p />
- 			                                                   </div>
- 			                                                   <p />
- 			                                                   </div>
+<?php
+ echo  "
+<p />
+			<div class='single-post'>
+			<div class='single-post-prof-image'>
+					<img src='$profilepic_info' height=''> </div>
+			<div class='posted_by'>$added_by</div>
+ 	  	<br /><br />
+ 			<div class='single-post-body'>
+			$body<br /><p /><p />
+ 			</div>
+ 			<p />
+ 			</div>
  			   						";
  			   }
 
