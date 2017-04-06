@@ -12,9 +12,10 @@ iframe {
     height: auto;
     border: none;
 }
+
 input:focus {
-  border: none;
-  box-shadow: none;
+    border: none;
+    box-shadow: none;
 }
 
 p {
@@ -341,6 +342,11 @@ h1 {
     border: 3px solid #59cae0;
     box-shadow: none;
     padding: 1.3em;
+}
+
+.login-signup-inputs:focus {
+    border: 3px solid #59cae0;
+    box-shadow: none;
 }
 
 .login-signup-button {
