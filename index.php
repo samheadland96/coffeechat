@@ -107,16 +107,16 @@ if (isset($_POST["user_login"]) && isset($_POST["password_login"])) {
 <div class="row features-section">
   <div class="large-4 columns features">
 <img src="img/features1.jpg">
-<h3><h3>
+<h3>Review Coffee<h3>
 
   </div>
   <div class="large-4 columns features">
     <img src="img/features2.jpg">
-    <h3>Title<h3>
+    <h3>Connect with others<h3>
 </div>
   <div class="large-4 columns features">
     <img src="img/features3.jpg">
-    <h3>Title<h3>
+    <h3>Message Friends<h3>
 
 </div>
 </div>

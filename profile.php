@@ -54,6 +54,7 @@ if (isset($_GET['u'])) {
  			   while ($row = mysql_fetch_assoc($getposts)) {
  			   						$id = $row['id'];
  			   						$body = $row['body'];
+										$brand_shop = $row['brand_shop'];
  			   						$date_added = $row['date_added'];
  			   						$added_by = $row['username'];
 
@@ -78,6 +79,7 @@ if (isset($_GET['u'])) {
 			<div class='posted_by'>$added_by</div>
  	  	<br /><br />
  			<div class='single-post-body'>
+			<h4 class='brand-shop'><bold>$brand_shop</bold></h4>
 			$body<br /><p /><p />
  			</div>
  			<p />

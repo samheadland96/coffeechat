@@ -41,6 +41,7 @@ else
 
 // ADDS USERS' POST TO THE DATABASE
 $post = @$_POST['post'];
+$reviewcoffee = @$_POST['reviewcoffee'];
 $postimage = @$_POST['post-image'];
 if ($post != "") {
 $date_added = date("Y-m-d");
@@ -48,7 +49,7 @@ $added_by = $user;
 $user_posted_to = $username;
 $user_id = $_SESSION['id'];
 
-$sqlCommand = "INSERT INTO post VALUES('', '$post','$date_added','$added_by', '$user_id', '$postimage')";
+$sqlCommand = "INSERT INTO post VALUES('', '$post','$reviewcoffee','$date_added','$added_by', '$user_id', '$postimage', '')";
 $query = mysql_query($sqlCommand) or die (mysql_error());
 
 }
@@ -59,9 +60,19 @@ $query = mysql_query($sqlCommand) or die (mysql_error());
     <!-- Post form for user to add post -->
           <form class="" action="" method="POST">
         	   <textarea type="text" class="home-post" name="post" placeholder="Write a post, upload a photo, review a coffee!"rows="" cols=""></textarea>
+             <div class="row">
+               <div class="medium-6 columns">
+             <p><bold>Coffee Brand / Shop</bold></p><input type="text" class="noborder" name="reviewcoffee" placeholder=""rows="" cols="">
+</div>
+<div class="medium-6 columns">
+<p><bold>Upload Photo!</bold></p>
           <button class="file-input">
             <input type="file" class="file-input" name="post-image">
           </button><br />
+
+        </div>
+
+        </div>
         	<input class="button round"type="submit" name="send" value="Post"/>
         	</form>
         </div>
@@ -81,6 +92,7 @@ $query = mysql_query($sqlCommand) or die (mysql_error());
   while ($row = mysql_fetch_assoc($getposts)) {
   						$id = $row['id'];
   						$body = $row['body'];
+              $review_brand = $row['brand_shop'];
               $added_by = $row['username'];
   						$date_added = $row['date_added'];
 
@@ -111,7 +123,9 @@ $profilepic_info = "./userdata/profile_pics/".$profilepic_info;
       </div>
   		<div class='single-post-user'><a href='$added_by'>$added_by</a></div>
           <br /><br />
-      <div class='single-post-body'>$body</div>
+
+      <div class='single-post-body'>
+      <h4 class='brand-shop'><bold>$review_brand</bold></h4>$body</div>
       <br/>
       <div class=''>
       <img src='$postimage'>

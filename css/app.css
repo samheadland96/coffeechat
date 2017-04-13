@@ -278,6 +278,10 @@ h1 {
     font-size: 1.5em;
     display: inline-block;
 }
+.brand-shop {
+  font-family: "museo-sans-rounded", sans-serif;
+
+}
 
 .comment-input {
     border: none;
