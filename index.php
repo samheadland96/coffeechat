@@ -133,7 +133,7 @@ if (isset($_POST["user_login"]) && isset($_POST["password_login"])) {
    <input type="text" size="40" name="username" class="signup-inputs round" placeholder="Username" title="Username" value="<? echo $un; ?>" required=""><p />
    <input type="text" size="40" name="email" class="signup-inputs round" placeholder="Email" title="Email" value="<? echo $em; ?>" required=""><p />
    <input type="password" size="40" class="signup-inputs round" name="password" placeholder="Password"  value="" required=""><p />
-   <input type="password2" size="40" class="signup-inputs round" name="password2" placeholder="Repeat Password" value="" required=""><p/>
+   <input type="password" size="40" class="signup-inputs round" name="password2" placeholder="Repeat Password" value="" required=""><p/>
    <input type="submit" style="text-align:center; margin:0 auto; display:block;"class="button round"name="reg" value="Sign Up!">
    </form>
   </div>

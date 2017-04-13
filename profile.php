@@ -91,6 +91,13 @@ if (isset($_GET['u'])) {
 					 header("Location: send_msg.php?u=$username");
 					}
 
+
+$getfollowers = mysql_query("SELECT * FROM users WHERE username='$username'") or die(mysql_error());
+while ($row = mysql_fetch_assoc($getfollowers)) {
+			$following = $row['following'];
+			$followers = $row['followers'];
+
+}
 					?>
 					</div>
 		</div>

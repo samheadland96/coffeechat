@@ -101,7 +101,7 @@ if (isset($_POST["user_login"]) && isset($_POST["password_login"])) {
 ?>
 <div class="row">
   <div class="medium-10 medium-centered columns">
-    <h2>Join Now or Login with your account!</h2>
+    <h2 class='loginpage-heading'>Join Now or Login with your account!</h2>
 </div>
   <div class="medium-10 medium-centered columns">
 <div class="large-6 columns">

@@ -9,7 +9,7 @@
 </div>
 </div>
 <?php
-$get_user_info = mysql_query("SELECT * FROM users WHERE ");
+$get_user_info = mysql_query("SELECT * FROM users WHERE username='$searchresult' ");
 $get_info = mysql_fetch_assoc($get_user_info);
 
 $profilepic_info = $get_info['profile_pic'];
