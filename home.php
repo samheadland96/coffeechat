@@ -1,6 +1,9 @@
 <?php
 include("inc/incfiles/headerloggedin.inc.php");
 
+$user = $_SESSION["user_login"];
+
+
 ?>
 <?php
 if (isset($_FILES['post-image'])) {
@@ -43,13 +46,14 @@ else
 $post = @$_POST['post'];
 $reviewcoffee = @$_POST['reviewcoffee'];
 $postimage = @$_POST['post-image'];
+
 if ($post != "") {
 $date_added = date("Y-m-d");
 $added_by = $user;
 $user_posted_to = $username;
 $user_id = $_SESSION['id'];
 
-$sqlCommand = "INSERT INTO post VALUES('', '$post','$reviewcoffee','$date_added','$added_by', '$user_id', '$postimage', '')";
+$sqlCommand = "INSERT INTO post VALUES('', '$post','$reviewcoffee','$date_added','$added_by','$user','$postimage', '')";
 $query = mysql_query($sqlCommand) or die (mysql_error());
 
 }
@@ -95,7 +99,7 @@ $query = mysql_query($sqlCommand) or die (mysql_error());
               $review_brand = $row['brand_shop'];
               $added_by = $row['username'];
   						$date_added = $row['date_added'];
-
+              $likes = $row['likes'];
 
 $get_user_info = mysql_query("SELECT * FROM users WHERE username='$added_by'");
 $get_info = mysql_fetch_assoc($get_user_info);
@@ -130,11 +134,14 @@ $profilepic_info = "./userdata/profile_pics/".$profilepic_info;
       <div class=''>
       <img src='$postimage'>
       </div>
+      <p><bold>$likes Likes</bold> <a style='color:#59cae0; font-weight:normal;' href='like.php?id=$id'>Like</a><p>
+
       <p class='date'>$date_added</p>
         <p />
       </div>";
   }
   }
+
   ?>
 
 

@@ -498,8 +498,16 @@ h1 {
     border-radius: 60px;
     width: 60px;
 }
+.viewprofile a {
+  color:#59cae0;
 
-
+}
+.viewprofile {
+  margin:1.5em 0;
+  font-weight: bold;
+  color:#59cae0;
+  text-align: center;
+}
 /* MESSAGES */
 
 .message-row {

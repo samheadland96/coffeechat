@@ -47,10 +47,10 @@ if (isset($_GET['u'])) {
         echo "
 
         <form action='send_msg.php?u=$username' method='POST'>
-        <h2>Compose a Message: ($username)</h2>
+        <h2>Send Message to '$username'</h2>
         <input type='text' name='msg_title' size='30' onClick=\"value=''\" value='Enter the message title here ...'><p />
         <textarea cols='50' rows='12' name='msg_body'>Enter the message you wish to send ...</textarea><p />
-        <input type='submit' name='submit' value='Send Message'>
+        <input type='submit' class='button round'name='submit' value='Send Message'>
         </form>
 
         ";

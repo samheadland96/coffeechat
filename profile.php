@@ -1,4 +1,7 @@
 <? include("inc/incfiles/headerloggedin.inc.php");
+
+$user_id = $_SESSION['u'];
+
 ?>
 
 
@@ -79,7 +82,7 @@ if (isset($_GET['u'])) {
 			<div class='posted_by'>$added_by</div>
  	  	<br /><br />
  			<div class='single-post-body'>
-			<h4 class='brand-shop'><bold>$brand_shop</bold></h4>
+			<h4 class='brand'><bold>$brand_shop</bold></h4>
 			$body<br /><p /><p />
  			</div>
  			<p />
@@ -117,7 +120,7 @@ while ($row = mysql_fetch_assoc($getfollowers)) {
 if($user_id){
 	if($user_id!=$id){
 		include 'connect.php';
-		$query2 = mysql_query("SELECT * FROM following WHERE user_id='$id' AND follower_id='$user_id'");
+		$query2 = mysql_query("SELECT * FROM following WHERE user_id='$user_id' AND follower_id='$id'");
 		mysql_close($conn);
 		if(mysql_num_rows($query2)>=1){
 			echo "<a href='unfollow.php?userid=$id&username=$username' class='button round follow-message'>Unfollow</a>";

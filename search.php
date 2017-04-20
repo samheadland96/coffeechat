@@ -38,13 +38,20 @@ while ($row = mysql_fetch_assoc($getposts)) {
           echo  "
 
 <div class='single-post'>
+<div class='row'>
+<div class='medium-8 columns'>
           <div class='search-pic'>
           <img src='$profilepic_info' height=''>
-          </div>
-          <div class='search-username'><a href='$username'>$username</a>
-          <p>View Profile</p>
+          <a href='$username'>$username</a>
           </div>
 
+</div>
+<div class='medium-4 columns'>
+
+<p class='viewprofile'><a href='$username'>View Profile</a></p>
+
+</div>
+</div>
 </div>
           </div>
           </div>
