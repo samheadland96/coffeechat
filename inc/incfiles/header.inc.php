@@ -46,27 +46,6 @@ $unread_numrows = "(".$unread_numrows.")";
 
 			<?php
 
-			if (isset($_SESSION["user_login"])) {
-			echo '
-
-</header>
-<div class="row bottom-header">
-<div class="large-7 columns">
-.
-</div>
-<div class="large-5 columns">
-	<a class="header-links" href="'. $username . '" >Profile</a>
-	<a class="header-links" href="account_settings.php">Settings</a>
-	<a class="header-links" href="my_messages.php">Messages ' . $unread_numrows . '</a>
-	<a class="header-links" href="logout.php">Logout</a>
-
-</div>
-</div>
-
-			';
-			}
-			else
-			{
 				echo '
 				<div class="small-6 columns">
 				<form action="index.php" method="post" name="form1">
@@ -95,7 +74,7 @@ $unread_numrows = "(".$unread_numrows.")";
 		</div>
 
 				';
-			}
+			
 			?>
 
 		</header><!--end mashmenu -->

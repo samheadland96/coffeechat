@@ -53,8 +53,8 @@ else
 //encrypt password and password 2 using md5 before sending to database
 $pswd = md5($pswd);
 $pswd2 = md5($pswd2);
-$query = mysql_query("INSERT INTO users VALUES ('','$un','$em','$pswd', '', '', '','$fn','$ln','','0')");
-die("<h2 class='welcome'>Welcome to CoffeeChat!</h2 ='welcome-login'>Login to your account to get started ...");
+$query = mysql_query("INSERT INTO users VALUES ('','$un','$em','$pswd', '0', '0','$fn','$ln','','')");
+die("<h2 class='welcome'>Welcome to CoffeeChat!</h2 class='welcome-login'>Login to your account to get started ...");
 }
 }
 }
@@ -105,20 +105,28 @@ if (isset($_POST["user_login"]) && isset($_POST["password_login"])) {
   </div>
 </div>
 <div class="row features-section">
-  <div class="large-4 columns features">
-<img src="img/features1.jpg">
-<h3>Review Coffee<h3>
 
+  <div class="large-4 columns">
+    <img src="img/features1.jpg"/>
+    <div class="features-text">
+    <h3 style="text-align:center;"><bold>Review Coffee</bold></h3>
+    </div>
+</div>
+
+  <div class="large-4 columns features">
+    <img src="img/features2.jpg"/>
+    <div class="features-text">
+    <h3 style="text-align:center;"><bold>Connect with others</bold></h3>
   </div>
-  <div class="large-4 columns features">
-    <img src="img/features2.jpg">
-    <h3>Connect with others<h3>
 </div>
-  <div class="large-4 columns features">
-    <img src="img/features3.jpg">
-    <h3>Message Friends<h3>
 
+  <div class="large-4 columns features">
+    <img src="img/features3.jpg"/>
+    <div class="features-text">
+    <h3 style="text-align:center;"><bold>Message Friends</bold></h3>
+  </div>
 </div>
+
 </div>
 
 <section class="row signup-section" id="signup">

@@ -1,13 +1,24 @@
+
+
 html, body {
     font-family: "museo-sans-rounded", sans-serif;
     margin: 0;
+}
+h1 {
+    text-align: center;
+    margin: 2em 0 0.5em 0;
+    font-weight: bold;
+    font-family: "museo-sans-rounded", sans-serif;
 }
 
 h2 {
     font-family: "museo-sans-rounded", sans-serif;
     font-weight: bold;
 }
-
+h3 {
+    font-family: "museo-sans-rounded", sans-serif;
+    font-weight: bold;
+}
 iframe {
     height: auto;
     border: none;
@@ -58,7 +69,17 @@ bold {
     font-weight: bold;
     text-transform: ;
 }
+.features-section {
+    margin: 1em auto;
+    font-family: "museo-sans", sans-serif;
 
+}
+.features-text{
+  text-align: center;
+  margin:1em;
+  font-family: "museo-sans", sans-serif;
+
+}
 
 /* BUTTON */
 
@@ -119,8 +140,6 @@ hr, br {
     box-shadow: none;
     border-bottom: 2px solid #59cae0;
 }
-
-
 /* HEADER */
 
 header {
@@ -153,9 +172,9 @@ header {
 
 .title {
     padding: 2em 0;
-    font-family: "museo-sans-rounded", sans-serif;
+    font-family: "museo-sans", sans-serif;
     ;
-    font-weight: bold;
+    font-weight: ;
 }
 
 .signup-section {
@@ -238,16 +257,6 @@ header {
     margin: 0;
 }
 
-h1 {
-    text-align: center;
-    margin: 2em 0 0.5em 0;
-    font-weight: bold;
-    font-family: "museo-sans-rounded", sans-serif;
-}
-
-.features-section {
-    margin: 1em auto;
-}
 
 .single-post {
     background-color: #F5F5F5;

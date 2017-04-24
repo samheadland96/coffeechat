@@ -66,7 +66,7 @@ $query = mysql_query($sqlCommand) or die (mysql_error());
         	   <textarea type="text" class="home-post" name="post" placeholder="Write a post, upload a photo, review a coffee!"rows="" cols=""></textarea>
              <div class="row">
                <div class="medium-6 columns">
-             <p><bold>Coffee Brand / Shop</bold></p><input type="text" class="noborder" name="reviewcoffee" placeholder=""rows="" cols="">
+             <p><bold>Coffee Brand / Shop</bold></p><input type="text" class="noborder" name="reviewcoffee" placeholder="Enter brand/shop you want to review!"rows="" cols="">
 </div>
 <div class="medium-6 columns">
 <p><bold>Upload Photo!</bold></p>

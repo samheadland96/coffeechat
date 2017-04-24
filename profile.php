@@ -42,11 +42,6 @@ if (isset($_GET['u'])) {
 ?>
 <div class="row">
 		<div class="small-4 large-8 columns">
-				<div id="status"></div>
-					<form action="<?php echo $username; ?>" method="POST">
-							<textarea type="text" id="post" class="profile-post"name="post" placeholder="Post an update!"rows="4" cols="60"></textarea>
-							<input class="button"type="submit" name="send" value="Post"/>
-					</form>
 
 					<div class="profilePosts">
 
@@ -60,12 +55,13 @@ if (isset($_GET['u'])) {
 										$brand_shop = $row['brand_shop'];
  			   						$date_added = $row['date_added'];
  			   						$added_by = $row['username'];
+										$likes = $row['likes'];
 
  			$get_user_info = mysql_query("SELECT * FROM users WHERE username='$added_by'");
 			$get_info = mysql_fetch_assoc($get_user_info);
   		$profilepic_info = $get_info['profile_pic'];
 			if ($profilepic_info == "") {
-					$profilepic_info = "./img/default_pic.jpg";
+					$profilepic_info = "./img/default_pic1.png";
  			}
  else
  		{
@@ -82,10 +78,13 @@ if (isset($_GET['u'])) {
 			<div class='posted_by'>$added_by</div>
  	  	<br /><br />
  			<div class='single-post-body'>
-			<h4 class='brand'><bold>$brand_shop</bold></h4>
+			<h4  class='brand-shop'><bold>$brand_shop</bold></h4>
 			$body<br /><p /><p />
+
  			</div>
- 			<p />
+			<p><bold>$likes Likes</bold> <a style='color:#59cae0; font-weight:normal;' href='like.php?id=$id'>Like</a><p>
+			<p class='date'>$date_added</p>
+
  			</div>
  			   						";
  			   }
