@@ -59,13 +59,13 @@ $unread_numrows = "(".$unread_numrows.")";
 
 <div class="row bottom-header">
 <div class="large-8 columns">
-<p>Hello <bold><a href='. $user .'> '. $user .'!</bold></p>
+<p class="hello-user">Hello <bold><a href='. $user .'> '. $user .'!</bold></p>
 </div>
 <div class="large-4 columns bottom">
-	<a class="header-links" href="'. $user . '" ><i class="fa fa-user" aria-hidden="true"></i>
+	<a class="header-links" href="'. $user . '" ><i class="fa fa-user fa-2x" aria-hidden="true"></i>
 </a>
-	<a class="header-links" href="account_settings.php"><i class="fa fa-cog " aria-hidden="true"></i></a>
-	<a class="header-links" href="my_messages.php"><i class="fa fa-comments " aria-hidden="true"></i> ' . $unread_numrows . '</a>
+	<a class="header-links" href="account_settings.php"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
+	<a class="header-links" href="my_messages.php"><i class="fa fa-comments fa-2x" aria-hidden="true"></i> ' . $unread_numrows . '</a>
 
 
 	<a class="header-links" href="logout.php">Logout</a>

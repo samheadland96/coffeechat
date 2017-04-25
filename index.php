@@ -19,7 +19,6 @@ $pswd = ""; //Password
 $pswd2 = ""; // Password 2
 $d = ""; // Sign up Date
 $u_check = ""; // Check if username exists
-//registration form
 $fn = strip_tags(@$_POST['fname']);
 $ln = strip_tags(@$_POST['lname']);
 $un = strip_tags(@$_POST['username']);

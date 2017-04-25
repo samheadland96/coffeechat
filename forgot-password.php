@@ -1,6 +1,5 @@
 <?php
-include('./classes/DB.php');
-include('./classes/Mail.php');
+include("inc/incfiles/headerother.inc.php");
 
 if (isset($_POST['resetpassword'])) {
 

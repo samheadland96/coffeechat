@@ -1,5 +1,5 @@
 <?php
-include ("./inc/incfiles/headerloggedin.inc.php");
+include ("./inc/incfiles/headerother.inc.php");
 
 //Take the user back
 if ($user) {
@@ -14,14 +14,14 @@ session_destroy();
 }
 else
 {
- die ("You must be logged in to view this page!");
+ die ("<h2 style='text-align:center;'>You must be logged in to view this page!</h2><br/>Click <a href='index.php'>HERE</a> to go back");
 }
 ?>
 <br />
 <center>
 <form action="close_account.php" method="POST">
 Are you sure you want to close your account?<br>
-<input type="submit" name="no" value="No, take me back!">
-<input type="submit" name="yes" value="Yes I'm sure">
+<input type="submit" class="button round" name="no" value="No, take me back!">
+<input type="submit" class="button round" name="yes" value="Yes I'm sure">
 </form>
 </center>

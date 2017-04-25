@@ -1,4 +1,4 @@
-<? include("inc/incfiles/headerloggedin.inc.php"); ?>
+<? include("inc/incfiles/headerother.inc.php"); ?>
 <?php
 if (!isset($_SESSION["user_login"])) {
     echo "";
