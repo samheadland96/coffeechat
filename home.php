@@ -1,4 +1,5 @@
 <?php
+// This retrieves the 'headerloggedin' inc file to the php.
 include("inc/incfiles/headerloggedin.inc.php");
 
 $user = $_SESSION["user_login"];
@@ -6,6 +7,7 @@ $user = $_SESSION["user_login"];
 
 ?>
 <?php
+// Code that is used to add a photo to a post
 if (isset($_FILES['post-image'])) {
  if (((@$_FILES["post-image"]["type"]=="image/jpeg") || (@$_FILES["profilepic"]["type"]=="image/png") || (@$_FILES["post-image"]["type"]=="image/gif"))&&(@$_FILES["profilepic"]["size"] < 1048576)) //1 Megabyte
 {
@@ -34,6 +36,8 @@ else
 }
 ?>
 <?php
+// This checks to see if the user is logged in
+
 if (!isset($_SESSION["user_login"])) {
     echo "<meta http-equiv=\"refresh\" content=\"0; url=\">";
 }
@@ -42,18 +46,21 @@ else
 ?>
 <?php
 
-// ADDS USERS' POST TO THE DATABASE
+// Declares the post inputs as varaibles.
 $post = @$_POST['post'];
 $reviewcoffee = @$_POST['reviewcoffee'];
 $postimage = @$_POST['post-image'];
-
+// If the post input is not equal to nothing
 if ($post != "") {
+// Makes the date added to the date that it was posted.
 $date_added = date("Y-m-d");
+// Make Variable equal to the varaible "$user"
 $added_by = $user;
-$user_posted_to = $username;
-$user_id = $_SESSION['id'];
+// Make 'user_id' equal to the varaible 'id'
 
-$sqlCommand = "INSERT INTO post VALUES('', '$post','$reviewcoffee','$date_added','$added_by','$user','$postimage', '')";
+$user_id = $id;
+
+$sqlCommand = "INSERT INTO post VALUES('', '$post','$reviewcoffee','$date_added','$added_by','$user_id','$postimage', '')";
 $query = mysql_query($sqlCommand) or die (mysql_error());
 
 }

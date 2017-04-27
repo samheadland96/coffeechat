@@ -13,9 +13,9 @@ $get_unread = mysql_fetch_assoc($get_unread_query);
 $unread_numrows = mysql_num_rows($get_unread_query);
 $unread_numrows = "(".$unread_numrows.")";
 ?>
-<!DOCTYPE html>
-
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
 	<meta charset="utf-8">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
@@ -74,7 +74,7 @@ $unread_numrows = "(".$unread_numrows.")";
 		</div>
 
 				';
-			
+
 			?>
 
 		</header><!--end mashmenu -->

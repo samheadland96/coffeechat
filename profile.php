@@ -47,9 +47,17 @@ if (isset($_GET['u'])) {
 
 
 					<?php
+
+
 					//$getposts = mysql_query("SELECT * FROM posts WHERE user_posted_to='$username' ORDER BY id DESC LIMIT 10") or die(mysql_error());
 					$getposts = mysql_query("SELECT * FROM post WHERE username='$username' ORDER BY id DESC LIMIT 10") or die(mysql_error());
- 			   while ($row = mysql_fetch_assoc($getposts)) {
+
+if ($getposts== 0) {
+	echo "<h1>No posts yet!</h1>";
+}
+
+else {
+				 while ($row = mysql_fetch_assoc($getposts)) {
  			   						$id = $row['id'];
  			   						$body = $row['body'];
 										$brand_shop = $row['brand_shop'];
@@ -89,7 +97,7 @@ if (isset($_GET['u'])) {
  			   						";
  			   }
 
-
+}
 
 				if (isset($_POST['sendmsg'])) {
 					 header("Location: send_msg.php?u=$username");
@@ -116,21 +124,17 @@ while ($row = mysql_fetch_assoc($getfollowers)) {
 	<div class="medium-6 columns">
 <?php
 
-if($user_id){
-	if($user_id!=$id){
+
 		include 'connect.php';
 		$query2 = mysql_query("SELECT * FROM following WHERE user_id='$user_id' AND follower_id='$id'");
-		mysql_close($conn);
-		if(mysql_num_rows($query2)>=1){
-			echo "<a href='unfollow.php?userid=$id&username=$username' class='button round follow-message'>Unfollow</a>";
-		}
-		else{
-			echo "<a href='follow.php?userid=$id&username=$username' class='button round follow-message'>Follow</a>";
-		}
+		//mysql_close($conn);
+		//if(mysql_num_rows($query2)>=1){
+			//echo "<a href='unfollow.php?userid=$id&username=$username' class='button round follow-message'>Unfollow</a>";
+		//}
+		//else{
+			echo "<a href='' class='button round follow-message'>Follow</a>";
+		//}
 
-
-	}
-}
 
 ?>
 

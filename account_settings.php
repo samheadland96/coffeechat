@@ -77,21 +77,12 @@ else
    $lastname = strip_tags(@$_POST['lname']);
    $bio = @$_POST['bio'];
 
-
-   if (strlen($firstname) < 3) {
-    echo "Your first name must be 3 more more characters long.";
-   }
-   else
-   if (strlen($lastname) < 5) {
-    echo "Your last name must be 5 more more characters long.";
-   }
-   else
-   {
     //Submit the form to the database
     $info_submit_query = mysql_query("UPDATE users SET first_name='$firstname', last_name='$lastname', bio='$bio' WHERE username='$user'");
     echo "Your profile info has been updated!";
     header("Location: $user");
-   }
+    echo "<meta http-equiv=\"refresh\" content=\"0; url=\">";
+
   }
   else
   {
