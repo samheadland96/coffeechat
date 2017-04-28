@@ -9,7 +9,8 @@ $user = $_SESSION["user_login"];
 <?php
 // Code that is used to add a photo to a post
 if (isset($_FILES['post-image'])) {
- if (((@$_FILES["post-image"]["type"]=="image/jpeg") || (@$_FILES["profilepic"]["type"]=="image/png") || (@$_FILES["post-image"]["type"]=="image/gif"))&&(@$_FILES["profilepic"]["size"] < 1048576)) //1 Megabyte
+ if (((@$_FILES["post-image"]["type"]=="image/jpeg") || (@$_FILES["profilepic"]["type"]=="image/png") || 
+ (@$_FILES["post-image"]["type"]=="image/gif"))&&(@$_FILES["profilepic"]["size"] < 1048576)) //1 Megabyte
 {
  $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
  $rand_dir_name = substr(str_shuffle($chars), 0, 15);
@@ -108,10 +109,12 @@ $query = mysql_query($sqlCommand) or die (mysql_error());
   						$date_added = $row['date_added'];
               $likes = $row['likes'];
 
-$get_user_info = mysql_query("SELECT * FROM users WHERE username='$added_by'");
-$get_info = mysql_fetch_assoc($get_user_info);
+
 
 //RETRIEVES THE USERS' PROFILE PIC FROM THE DATABASE
+
+$get_user_info = mysql_query("SELECT * FROM users WHERE username='$added_by'");
+$get_info = mysql_fetch_assoc($get_user_info);
 
 $profilepic_info = $get_info['profile_pic'];
 if ($profilepic_info == "") {

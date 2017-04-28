@@ -1,4 +1,4 @@
-<? include("inc/incfiles/headerother.inc.php"); ?>
+<?php include("inc/incfiles/headerother.inc.php"); ?>
 <?php
 if (!isset($_SESSION["user_login"])) {
     echo "";
@@ -77,7 +77,7 @@ echo "Username already taken ...";
 
 
 ?>
-<?
+<?php
 //Login Script
 if (isset($_POST["user_login"]) && isset($_POST["password_login"])) {
 	  $user_login = preg_replace('#[^A-Za-z0-9]#i', '', $_POST["user_login"]); // filter everything but numbers and letters
@@ -108,10 +108,10 @@ if (isset($_POST["user_login"]) && isset($_POST["password_login"])) {
   <h3 class="signup-page-h3">Sign up!</h3>
   <form action="" method="post">
 
-  <input type="text" size="40" name="fname"  class="login-signup-inputs round" placeholder="First Name" title="First Name" value="<? echo $fn; ?>" required=""><p />
-  <input type="text" size="40" name="lname" class="login-signup-inputs round" placeholder="Last Name" title="Last Name" value="<? echo $ln; ?>" required=""><p />
-  <input type="text" size="40" name="username" class="login-signup-inputs round" placeholder="Username" title="Username" value="<? echo $un; ?>" required=""><p />
-  <input type="text" size="40" name="email" class="login-signup-inputs round" placeholder="Email" title="Email" value="<? echo $em; ?>" required=""><p />
+  <input type="text" size="40" name="fname"  class="login-signup-inputs round" placeholder="First Name" title="First Name" value="<?php echo $fn; ?>" required=""><p />
+  <input type="text" size="40" name="lname" class="login-signup-inputs round" placeholder="Last Name" title="Last Name" value="<?php echo $ln; ?>" required=""><p />
+  <input type="text" size="40" name="username" class="login-signup-inputs round" placeholder="Username" title="Username" value="<?php echo $un; ?>" required=""><p />
+  <input type="text" size="40" name="email" class="login-signup-inputs round" placeholder="Email" title="Email" value="<?php echo $em; ?>" required=""><p />
   <input type="password" size="40" class="login-signup-inputs round" name="password" placeholder="Password"  value="" required=""><p />
   <input type="password" size="40" class="login-signup-inputs round" name="password2" placeholder="Repeat Password" value="" required=""><p/>
   <input type="submit"class="login-signup-button button round"name="reg" value="Sign Up!">

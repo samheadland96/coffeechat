@@ -7,7 +7,7 @@ include("inc/incfiles/headerloggedin.inc.php");
 <h2>My Unread Messages:</h2><p />
 <?php
 //Grab the messages for the logged in user
-$grab_messages = mysql_query("SELECT * FROM messages WHERE user_to='$user' && opened='no'");
+$grab_messages = mysql_query("SELECT * FROM messages WHERE user_to='$user' && opened='no'  && deleted='no'");
 $numrows = mysql_numrows($grab_messages);
 if ($numrows != 0) {
 while ($get_msg = mysql_fetch_assoc($grab_messages)) {
@@ -21,9 +21,9 @@ while ($get_msg = mysql_fetch_assoc($grab_messages)) {
       $deleted = $get_msg['deleted'];
       ?>
       <script language="javascript">
-         function toggle<? echo $id; ?>() {
-           var ele = document.getElementById("toggleText<? echo $id; ?>");
-           var text = document.getElementById("displayText<? echo $id; ?>");
+         function toggle<?php echo $id; ?>() {
+           var ele = document.getElementById("toggleText<?php echo $id; ?>");
+           var text = document.getElementById("displayText<?php echo $id; ?>");
            if (ele.style.display == "block") {
               ele.style.display = "none";
            }
@@ -46,6 +46,10 @@ while ($get_msg = mysql_fetch_assoc($grab_messages)) {
       }
       else
       $msg_body = $msg_body;
+
+      if (@$_POST['delete_' . $id . '']) {
+            $delete_msg_query = mysql_query("UPDATE messages SET deleted='yes' WHERE id='$id'");
+           }
 
       if (@$_POST['setopened_' . $id . '']) {
        //Update the private messages table
@@ -80,7 +84,7 @@ else
 <div class="medium-6 columns">
 
 <h2>My Read Messages:</h2><p />
-<?
+<?php
 //Grab the messages for the logged in user
 $grab_messages = mysql_query("SELECT * FROM messages WHERE user_to='$user' && opened='yes'");
 $numrows_read = mysql_numrows($grab_messages);
@@ -96,9 +100,9 @@ while ($get_msg = mysql_fetch_assoc($grab_messages)) {
       $deleted = $get_msg['deleted'];
       ?>
         <script language="javascript">
-         function toggle<? echo $id; ?>() {
-           var ele = document.getElementById("toggleText<? echo $id; ?>");
-           var text = document.getElementById("displayText<? echo $id; ?>");
+         function toggle<?php echo $id; ?>() {
+           var ele = document.getElementById("toggleText<?php echo $id; ?>");
+           var text = document.getElementById("displayText<?php echo $id; ?>");
            if (ele.style.display == "block") {
               ele.style.display = "none";
            }
@@ -108,7 +112,7 @@ while ($get_msg = mysql_fetch_assoc($grab_messages)) {
            }
          }
 </script>
-      <?
+      <?php
 
       if (strlen($msg_title) > 50) {
        $msg_title = substr($msg_title, 0, 50)." ...";

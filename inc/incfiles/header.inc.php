@@ -1,4 +1,4 @@
-<?
+<?php
 include ("inc/scripts/mysql_connect.inc.php");
 session_start();
 if (isset($_SESSION['user_login'])) {
@@ -7,14 +7,9 @@ $user = $_SESSION["user_login"];
 else {
 $user = "";
 }
-
-$get_unread_query = mysql_query("SELECT opened FROM pvt_messages WHERE user_to='$user' && opened='no'");
-$get_unread = mysql_fetch_assoc($get_unread_query);
-$unread_numrows = mysql_num_rows($get_unread_query);
-$unread_numrows = "(".$unread_numrows.")";
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
 <html>
 <head>
 	<meta charset="utf-8">

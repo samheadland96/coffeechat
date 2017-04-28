@@ -1,4 +1,4 @@
-<?
+<?php
 include ("inc/scripts/mysql_connect.inc.php");
 session_start();
 if (isset($_SESSION['user_login'])) {

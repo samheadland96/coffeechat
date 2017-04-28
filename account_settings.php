@@ -1,4 +1,4 @@
-<?
+<?php
 include ("inc/incfiles/headerloggedin.inc.php");
 if ($user) {
 
@@ -8,7 +8,7 @@ else
  die ("You must be logged in to view this page!");
 }
 ?>
-<?
+<?php
   $senddata = @$_POST['senddata'];
 
   //Password variables

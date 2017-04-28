@@ -1,4 +1,4 @@
-<?
+<?php
 include("inc/incfiles/headerloggedin.inc.php");
 ?>
 <div class="row">

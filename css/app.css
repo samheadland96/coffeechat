@@ -542,6 +542,12 @@ header {
     float: right;
 }
 
+.message-input {
+  border: 2px solid #59cae0;
+  border-radius: 5px;
+  box-shadow: none;
+}
+
 
 /* FOOTER */
 

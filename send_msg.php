@@ -24,11 +24,6 @@ if (isset($_GET['u'])) {
 
 
 
-            if (strlen($msg_title) < 3) {
-             echo "Your message title cannot be less than 3 characters in length!";
-            }
-
-            else
             if (strlen($msg_body) < 3) {
              echo "Your message cannot be less than 3 characters in length!";
             }
@@ -43,8 +38,8 @@ if (isset($_GET['u'])) {
 
         <form action='send_msg.php?u=$username' method='POST'>
         <h2>Send Message: ($username)</h2>
-        <input type='text' name='msg_title' size='30' onClick=\"value=''\" placeholder='Enter the message title here ...' required=''><p />
-        <textarea cols='50' rows='12' name='msg_body' required=''></textarea><p />
+        <input type='text' class='message-input' name='msg_title' size='30' onClick=\"value=''\" placeholder='Enter the message title here' required=''><p />
+        <textarea cols='50' class='message-input' rows='12' name='msg_body' placeholder='Enter your message here!' required=''></textarea><p />
         <input type='submit' class='button round' name='submit' value='Send Message'>
         </form>
 
