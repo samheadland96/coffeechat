@@ -1,4 +1,5 @@
 <?php include("inc/incfiles/header.inc.php"); ?>
+
 <?php
 if (!isset($_SESSION["user_login"])) {
     echo "";
@@ -8,6 +9,8 @@ else
     echo "<meta http-equiv=\"refresh\" content=\"0; url=home.php\">";
 }
 ?>
+
+
 <?php
 $reg = @$_POST['reg'];
 //declaring variables to prevent errors

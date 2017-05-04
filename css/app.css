@@ -2,6 +2,7 @@ html, body {
     font-family: "museo-sans-rounded", sans-serif;
     margin: 0;
 }
+
 h1 {
     text-align: center;
     margin: 2em 0 0.5em 0;
@@ -13,10 +14,12 @@ h2 {
     font-family: "museo-sans-rounded", sans-serif;
     font-weight: bold;
 }
+
 h3 {
     font-family: "museo-sans-rounded", sans-serif;
     font-weight: bold;
 }
+
 iframe {
     height: auto;
     border: none;
@@ -67,17 +70,18 @@ bold {
     font-weight: bold;
     text-transform: ;
 }
+
 .features-section {
     margin: 1em auto;
     font-family: "museo-sans", sans-serif;
-
 }
-.features-text{
-  text-align: center;
-  margin:1em;
-  font-family: "museo-sans", sans-serif;
 
+.features-text {
+    text-align: center;
+    margin: 1em;
+    font-family: "museo-sans", sans-serif;
 }
+
 
 /* BUTTON */
 
@@ -138,6 +142,8 @@ hr, br {
     box-shadow: none;
     border-bottom: 2px solid #59cae0;
 }
+
+
 /* HEADER */
 
 header {
@@ -255,7 +261,6 @@ header {
     margin: 0;
 }
 
-
 .single-post {
     background-color: #F5F5F5;
     border-bottom: 3px solid #59CAE0;
@@ -285,9 +290,9 @@ header {
     font-size: 1.5em;
     display: inline-block;
 }
-.brand-shop {
-  font-family: "museo-sans-rounded", sans-serif;
 
+.brand-shop {
+    font-family: "museo-sans-rounded", sans-serif;
 }
 
 .comment-input {
@@ -296,9 +301,11 @@ header {
     padding: 1em;
     background: #eaeaea;
 }
+
 .hello-user {
-  margin-top:0.2em;
+    margin-top: 0.2em;
 }
+
 .bottom-header {
     background-color: #EAEAEA;
     width: 100%;
@@ -366,11 +373,13 @@ header {
     margin: 0.5em auto;
     display: block;
 }
+
 .loginpage-heading {
-  text-align: center;
-  margin:0.5em;
-  color:#59cae0;
+    text-align: center;
+    margin: 0.5em;
+    color: #59cae0;
 }
+
 
 /* HOME */
 
@@ -507,16 +516,19 @@ header {
     border-radius: 60px;
     width: 60px;
 }
-.viewprofile a {
-  color:#59cae0;
 
+.viewprofile a {
+    color: #59cae0;
 }
+
 .viewprofile {
-  margin:1.5em 0;
-  font-weight: bold;
-  color:#59cae0;
-  text-align: center;
+    margin: 1.5em 0;
+    font-weight: bold;
+    color: #59cae0;
+    text-align: center;
 }
+
+
 /* MESSAGES */
 
 .message-row {
@@ -543,9 +555,13 @@ header {
 }
 
 .message-input {
-  border: 2px solid #59cae0;
-  border-radius: 5px;
-  box-shadow: none;
+    border: 2px solid #59cae0;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.single-message {
+    background: #eaeaea;
 }
 
 

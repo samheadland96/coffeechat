@@ -17,7 +17,7 @@ $unread_numrows = "(".$unread_numrows.")";
 
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+		<meta charset="utf-8">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script src="js/main.js" type="text/javascript"></script>
 		<script src="js/parsley.min.js" type="text/javascript"></script>
@@ -26,9 +26,9 @@ $unread_numrows = "(".$unread_numrows.")";
 		<link rel="stylesheet" href="css/app.css">
 
 		<script src="https://use.typekit.net/wse3qql.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
-<title>CoffeeChat</title>
+<title>CoffeeChat | Networking for Coffee Lovers</title>
 
 </head>
 <body>

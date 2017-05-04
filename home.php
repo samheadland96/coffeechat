@@ -9,7 +9,7 @@ $user = $_SESSION["user_login"];
 <?php
 // Code that is used to add a photo to a post
 if (isset($_FILES['post-image'])) {
- if (((@$_FILES["post-image"]["type"]=="image/jpeg") || (@$_FILES["profilepic"]["type"]=="image/png") || 
+ if (((@$_FILES["post-image"]["type"]=="image/jpeg") || (@$_FILES["profilepic"]["type"]=="image/png") ||
  (@$_FILES["post-image"]["type"]=="image/gif"))&&(@$_FILES["profilepic"]["size"] < 1048576)) //1 Megabyte
 {
  $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -23,7 +23,6 @@ if (isset($_FILES['post-image'])) {
  else
  {
   move_uploaded_file(@$_FILES["post-image"]["tmp_name"],"userdata/user_photos/$rand_dir_name/".$_FILES["post-image"]["name"]);
-  //echo "Uploaded and stored in: userdata/profile_pics/$rand_dir_name/".@$_FILES["profilepic"]["name"];
   $profile_pic_name = @$_FILES["post-image"]["name"];
   $profile_pic_query = mysql_query("UPDATE post SET photo='$rand_dir_name/$profile_pic_name' WHERE username='$username'");
   header("Location: account_settings.php");
@@ -71,7 +70,7 @@ $query = mysql_query($sqlCommand) or die (mysql_error());
 
     <!-- Post form for user to add post -->
           <form class="" action="" method="POST">
-        	   <textarea type="text" class="home-post" name="post" placeholder="Write a post, upload a photo, review a coffee!"rows="" cols=""></textarea>
+        	   <textarea  class="home-post" name="post" placeholder="Write a post, upload a photo, review a coffee!"rows="" cols=""></textarea>
              <div class="row">
                <div class="medium-6 columns">
              <p><bold>Coffee Brand / Shop</bold></p><input type="text" class="noborder" name="reviewcoffee" placeholder="Enter brand/shop you want to review!"rows="" cols="">
@@ -100,7 +99,6 @@ $query = mysql_query($sqlCommand) or die (mysql_error());
   //If the user is logged in
 
   $getposts = mysql_query("SELECT * FROM post WHERE username='$username' & user_id IN (SELECT follower_id FROM following WHERE user_id='$user_id') ORDER BY date_added DESC") or die(mysql_error());
-
   while ($row = mysql_fetch_assoc($getposts)) {
   						$id = $row['id'];
   						$body = $row['body'];

@@ -20,7 +20,6 @@ if (isset($_GET['u'])) {
             $msg_body = strip_tags(@$_POST['msg_body']);
             $date = date("Y-m-d");
             $opened = "no";
-            $deleted = "no";
 
 
 
@@ -30,14 +29,14 @@ if (isset($_GET['u'])) {
             else
             {
 
-            $send_msg = mysql_query("INSERT INTO messages VALUES ('','$user','$username','$msg_title', '$msg_body','$date','$opened', '$deleted')");
+            $send_msg = mysql_query("INSERT INTO messages VALUES ('','$user','$username','$msg_title', '$msg_body','$date','$opened')");
            echo "Your message has been sent!";
             }
           }
         echo "
 
         <form action='send_msg.php?u=$username' method='POST'>
-        <h2>Send Message: ($username)</h2>
+        <h2>Send Message to '$username'</h2>
         <input type='text' class='message-input' name='msg_title' size='30' onClick=\"value=''\" placeholder='Enter the message title here' required=''><p />
         <textarea cols='50' class='message-input' rows='12' name='msg_body' placeholder='Enter your message here!' required=''></textarea><p />
         <input type='submit' class='button round' name='submit' value='Send Message'>

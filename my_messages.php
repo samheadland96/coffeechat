@@ -7,7 +7,7 @@ include("inc/incfiles/headerloggedin.inc.php");
 <h2>My Unread Messages:</h2><p />
 <?php
 //Grab the messages for the logged in user
-$grab_messages = mysql_query("SELECT * FROM messages WHERE user_to='$user' && opened='no'  && deleted='no'");
+$grab_messages = mysql_query("SELECT * FROM messages WHERE user_to='$user' && opened='no'");
 $numrows = mysql_numrows($grab_messages);
 if ($numrows != 0) {
 while ($get_msg = mysql_fetch_assoc($grab_messages)) {
@@ -18,7 +18,6 @@ while ($get_msg = mysql_fetch_assoc($grab_messages)) {
       $msg_body = $get_msg['msg_body'];
       $date = $get_msg['date'];
       $opened = $get_msg['opened'];
-      $deleted = $get_msg['deleted'];
       ?>
       <script language="javascript">
          function toggle<?php echo $id; ?>() {
@@ -48,12 +47,14 @@ while ($get_msg = mysql_fetch_assoc($grab_messages)) {
       $msg_body = $msg_body;
 
       if (@$_POST['delete_' . $id . '']) {
-            $delete_msg_query = mysql_query("UPDATE messages SET deleted='yes' WHERE id='$id'");
+            $delete_msg_query = mysql_query("DELETE FROM messages WHERE id='$id'");
            }
 
       if (@$_POST['setopened_' . $id . '']) {
        //Update the private messages table
        $setopened_query = mysql_query("UPDATE messages SET opened='yes' WHERE id='$id'");
+       echo "<meta http-equiv=\"refresh\" content=\"0; url=\">";
+
       }
 
       echo "
@@ -97,7 +98,8 @@ while ($get_msg = mysql_fetch_assoc($grab_messages)) {
       $msg_body = $get_msg['msg_body'];
       $date = $get_msg['date'];
       $opened = $get_msg['opened'];
-      $deleted = $get_msg['deleted'];
+
+
       ?>
         <script language="javascript">
          function toggle<?php echo $id; ?>() {
@@ -127,22 +129,28 @@ while ($get_msg = mysql_fetch_assoc($grab_messages)) {
       $msg_body = $msg_body;
 
       if (@$_POST['delete_' . $id . '']) {
-       $delete_msg_query = mysql_query("UPDATE messages SET deleted='yes' WHERE id='$id'");
+       $delete_msg_query = mysql_query("DELETE FROM messages WHERE id='$id'");
       }
       if (@$_POST['reply_' . $id . '']) {
        echo "<meta http-equiv=\"refresh\" content=\"0; url=msg_reply.php?u=$user_from\">";
       }
 
-      echo "      <form method='POST' action='my_messages.php' name='$msg_title'>
+      echo "
+      <form method='POST' action='my_messages.php' name='$msg_title'>
       <b><a href='$user_from'>$user_from</a></b>
       <br/>
-      <input type='button' class='message-open' name='openmsg' value='$msg_title' onClick='javascript:toggle$id()'><br/></br>
+      <input type='button' class='message-open' name='openmsg' value='View Message' onClick='javascript:toggle$id()'><br/></br>
+
+      <div id='toggleText$id' style='display: none;'>
+      <p><bold>Title:</bold> $msg_title</p>
+      <bold>Message:</bold><br/>$msg_body
+      </div>
+
+
       <input type='submit' class='button round' name='delete_$id' value=\"Delete\" title='Delete Message'>
       <input type='submit' class='button round' name='reply_$id' value=\"Reply\">
       </form>
-      <div id='toggleText$id' style='display: none;'>
-      <br />$msg_body
-      </div>
+
       <br />";
 }
 }

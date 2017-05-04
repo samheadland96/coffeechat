@@ -1,5 +1,6 @@
 <?php
 include ("inc/incfiles/headerloggedin.inc.php");
+
 if ($user) {
 
 }
@@ -18,7 +19,6 @@ else
 
   if ($senddata) {
   //If the form has been submitted ...
-
   $password_query = mysql_query("SELECT * FROM users WHERE username='$user'");
   while ($row = mysql_fetch_assoc($password_query)) {
         $db_password = $row['password'];

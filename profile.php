@@ -1,7 +1,4 @@
 <?php include("inc/incfiles/headerloggedin.inc.php");
-
-$user_id = $_SESSION['u'];
-
 ?>
 
 

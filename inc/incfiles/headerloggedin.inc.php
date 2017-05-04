@@ -13,8 +13,7 @@ $get_unread = mysql_fetch_assoc($get_unread_query);
 $unread_numrows = mysql_num_rows($get_unread_query);
 $unread_numrows = "(".$unread_numrows.")";
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
- "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
 	<meta charset="utf-8">
@@ -26,7 +25,7 @@ $unread_numrows = "(".$unread_numrows.")";
 		<script src="https://use.fontawesome.com/70edd6689c.js"></script>
 
 		<script src="https://use.typekit.net/wse3qql.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 <title>CoffeeChat</title>
 

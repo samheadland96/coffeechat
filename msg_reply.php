@@ -20,27 +20,15 @@ if (isset($_GET['u'])) {
             $msg_body = strip_tags(@$_POST['msg_body']);
             $date = date("Y-m-d");
             $opened = "no";
-            $deleted = "no";
 
-            if ($msg_title == "Enter the message title here ...") {
-             echo "Please give your message a title.";
-            }
-            else
-            if (strlen($msg_title) < 3) {
-             echo "Your message title cannot be less than 3 characters in length!";
-            }
-            else
-            if ($msg_body == "Enter the message you wish to send ...") {
-             echo "Please write a message.";
-            }
-            else
+        
             if (strlen($msg_body) < 3) {
              echo "Your message cannot be less than 3 characters in length!";
             }
             else
             {
 
-            $send_msg = mysql_query("INSERT INTO pvt_messages VALUES ('','$user','$username','$msg_title','$msg_body','$date','$opened')");
+            $send_msg = mysql_query("INSERT INTO _messages VALUES ('','$user','$username','$msg_title','$msg_body','$date','$opened')");
            echo "Your message has been sent!";
             }
           }
@@ -48,8 +36,8 @@ if (isset($_GET['u'])) {
 
         <form action='send_msg.php?u=$username' method='POST'>
         <h2>Send Message to '$username'</h2>
-        <input type='text' name='msg_title' size='30' onClick=\"value=''\" value='Enter the message title here ...'><p />
-        <textarea cols='50' rows='12' name='msg_body'>Enter the message you wish to send ...</textarea><p />
+        <input type='text' class='message-input'  name='msg_title' size='30' onClick=\"value=''\" placeholder='Enter the message title here'><p />
+        <textarea cols='50'  class='message-input'  rows='12' placeholder='Enter your message here!' name='msg_body'></textarea><p />
         <input type='submit' class='button round'name='submit' value='Send Message'>
         </form>
 

@@ -14,11 +14,9 @@ function getTime($t_time){
 }
 	if($user_id){
 		include "connect.php";
-		$query = mysql_query("SELECT username, followers, following, posts
-                              FROM users
-                              WHERE id='$user_id'
-                             ");
+		$query = mysql_query("SELECT username, followers, following, posts FROM users WHERE id='$user_id'  ");
 		mysql_close($conn);
+		
 		$row = mysql_fetch_assoc($query);
 		$username = $row['username'];
 		$tweets = $row['posts'];
