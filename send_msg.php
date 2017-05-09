@@ -37,7 +37,7 @@ if (isset($_GET['u'])) {
 
         <form action='send_msg.php?u=$username' method='POST'>
         <h2>Send Message to '$username'</h2>
-        <input type='text' class='message-input' name='msg_title' size='30' onClick=\"value=''\" placeholder='Enter the message title here' required=''><p />
+        <input type='text' class='message-input' name='msg_title' size='30' onClick=\" value=''\" placeholder='Enter the message title here' required=''><p />
         <textarea cols='50' class='message-input' rows='12' name='msg_body' placeholder='Enter your message here!' required=''></textarea><p />
         <input type='submit' class='button round' name='submit' value='Send Message'>
         </form>
@@ -46,7 +46,8 @@ if (isset($_GET['u'])) {
         }
         else
         {
-         header("Location: $user");
+         echo "<h1>You can't send a message to yourself!</h1>";
+
         }
 	}
 	}

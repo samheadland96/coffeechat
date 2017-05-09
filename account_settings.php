@@ -12,44 +12,49 @@ else
 <?php
   $senddata = @$_POST['senddata'];
 
-  //Password variables
+  //Password variables for changing password
   $old_password = strip_tags(@$_POST['oldpassword']);
   $new_password = strip_tags(@$_POST['newpassword']);
   $repeat_password = strip_tags(@$_POST['newpassword2']);
 
+  // If the form has been submitted
   if ($senddata) {
-  //If the form has been submitted ...
+    // SELECT query to check for user
   $password_query = mysql_query("SELECT * FROM users WHERE username='$user'");
   while ($row = mysql_fetch_assoc($password_query)) {
         $db_password = $row['password'];
 
-        //md5 the old password before we check if it matches
+        //md5 the old password before checking if it matches
         $old_password_md5 = md5($old_password);
 
-        //Check whether old password equals $db_password
+        //Check whether old password equals the $db_password
         if ($old_password_md5 == $db_password) {
          //Continue Changing the users password ...
-         //Check whether the 2 new passwords match
+         //This checks whether the 2 new passwords match
          if ($new_password == $repeat_password) {
+           // If the password is less than or equal to 4 ,then it displays an error message
             if (strlen($new_password) <= 4) {
              echo "Sorry! But your password must be more than 4 character long!";
             }
             else
             {
 
-            //md5 the new password before we add it to the database
+            //md5 the new password before adding it to the database
             $new_password_md5 = md5($new_password);
-           //Great! Update the users passwords!
+
+           // Updates the users password
            $password_update_query = mysql_query("UPDATE users SET password='$new_password_md5' WHERE username='$user'");
            echo "Success! Your password has been updated!";
 
             }
          }
+         // THe following is display if the passwords do not match
          else
          {
           echo "Your two new passwords don't match!";
          }
         }
+
         else
         {
          echo "The old password is incorrect!";

@@ -98,7 +98,9 @@ $query = mysql_query($sqlCommand) or die (mysql_error());
   <?php
   //If the user is logged in
 
-  $getposts = mysql_query("SELECT * FROM post WHERE username='$username' & user_id IN (SELECT follower_id FROM following WHERE user_id='$user_id') ORDER BY date_added DESC") or die(mysql_error());
+  $getposts = mysql_query("SELECT * FROM post
+  WHERE username='$username' & user_id IN (SELECT follower_id FROM following WHERE user_id='$user_id')
+  ORDER BY date_added DESC");
   while ($row = mysql_fetch_assoc($getposts)) {
   						$id = $row['id'];
   						$body = $row['body'];

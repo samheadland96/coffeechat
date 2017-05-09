@@ -24,11 +24,13 @@ $profilepic_info = "./userdata/profile_pics/".$profilepic_info;
 
 //$getposts = mysql_query("SELECT * FROM posts WHERE user_posted_to='$username' ORDER BY id DESC LIMIT 10") or die(mysql_error());
 $getposts = mysql_query("SELECT * FROM users WHERE username='$searchresult' ORDER BY id DESC LIMIT 10") or die(mysql_error());
+
+if ($getposts) {
+
 while ($row = mysql_fetch_assoc($getposts)) {
           $id = $row['id'];
           $username = $row['username'];
           $profilepic = $row['profile_pic'];
-
 
 ?>
 <div class="row">
@@ -57,5 +59,9 @@ while ($row = mysql_fetch_assoc($getposts)) {
           </div>
           ";
 
+}
+}
+else {
+  echo "No Results found";
 }
 ?>

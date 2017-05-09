@@ -66,7 +66,7 @@ else {
 			$get_info = mysql_fetch_assoc($get_user_info);
   		$profilepic_info = $get_info['profile_pic'];
 			if ($profilepic_info == "") {
-					$profilepic_info = "./img/default_pic1.png";
+					$profilepic_info = "./img/default_pic.jpg";
  			}
  else
  		{
