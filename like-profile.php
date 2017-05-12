@@ -1,8 +1,8 @@
 <?php
 $id = $_GET['id'];
 
-		$query = mysql_query("SELECT * FROM post WHERE id='$id'");
-		mysql_close($conn);
+$query = mysql_query("SELECT * FROM post WHERE id='$id'");
+mysql_close($conn);
 
 if(mysql_num_rows($query)>=1)
 {

@@ -1,16 +1,22 @@
 <?php
+// Includes the header inc file into the page
 include ("./inc/incfiles/headerother.inc.php");
 
-//Take the user back
 if ($user) {
+  //If the user clicks 'NO' button then it returns back to settings page
 if (isset($_POST['no'])) {
  header("Location: account_settings.php");
 }
+
+// If 'YES' button is clicked, the user is removed from the database
 if (isset($_POST['yes'])) {
 $close_account = mysql_query("DELETE FROM users WHERE username='$user'");
 $close_account = mysql_query("DELETE FROM users WHERE username='$user'");
 
+// Message displayed on screen confirming closed account
 echo "Your Account has been closed!";
+
+// Session is destroyed
 session_destroy();
 }
 }

@@ -138,27 +138,27 @@ else
   <div class="medium-10 medium-centered columns">
     <h2 class="account-settings">Account Settings</h2>
 
-<div class="large-7 columns">
-  <p>UPLOAD PROFILE PICTURE:</p>
+  <div class="large-7 columns">
+    <p>UPLOAD PROFILE PICTURE:</p>
 
-<form action="" method="POST" enctype="multipart/form-data">
-<input type="file" name="profilepic" /><br />
-<input type="submit"  class="button round" name="uploadpic" value="Upload Image">
-</form>
-</div>
-<div class="large-5 columns">
-<img src="<? echo $profile_pic; ?>" style="border-radius:60px; border: 2px solid #59cae0" width="110" />
-</div>
-    <div class="row">
-      <div class="medium-12 columns">
+    <form action="" method="POST" enctype="multipart/form-data">
+        <input type="file" name="profilepic" /><br />
+        <input type="submit"  class="button round" name="uploadpic" value="Upload Image">
+    </form>
+  </div>
+  <div class="large-5 columns">
+    <img src="<? echo $profile_pic; ?>" style="border-radius:60px; border: 2px solid #59cae0" width="110" />
+  </div>
+  <div class="row">
+    <div class="medium-12 columns">
       <form action="account_settings.php" method="post">
       <p class="settings-title">CHANGE YOUR PASSWORD:</p> <br />
     </div>
-</div>
-<div class="row">
-<div class="medium-6 columns">
+    </div>
+    <div class="row">
+    <div class="medium-6 columns">
 
-Your Old Password: <input type="text" class="noborder" name="oldpassword" id="oldpassword" size="40"><br />
+      Your Old Password: <input type="text" class="noborder" name="oldpassword" id="oldpassword" size="40"><br />
 </div>
 <div class="medium-6 columns">
 Your New Password: <input type="text" class="noborder"  name="newpassword" id="newpassword" size="40"><br />
